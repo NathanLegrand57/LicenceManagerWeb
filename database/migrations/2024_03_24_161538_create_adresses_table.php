@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('adresses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('numero');
             $table->string('rue', 75);
             $table->foreignIdFor(Ville::class, 'ville_id');
         });

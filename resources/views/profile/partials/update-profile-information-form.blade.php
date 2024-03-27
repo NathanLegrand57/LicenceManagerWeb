@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
+            {{ __('Informations du profil') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
+            {{ __("Mettre à jour les informations du profil.") }}
         </p>
     </header>
 
@@ -18,7 +18,7 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Name')" />
+            <x-input-label for="name" :value="__('Libellé')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
@@ -31,24 +31,36 @@
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
                     <p class="text-sm mt-2 text-gray-800">
-                        {{ __('Your email address is unverified.') }}
+                        {{ __('Votre adresse mail n\'est pas vérifiée.') }}
 
                         <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
+                            {{ __('Cliquez ici pour renvoyer un mail de vérification.') }}
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
                         <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
+                            {{ __('Un nouveau lien de vérification a été envoyé à votre adresse mail.') }}
                         </p>
                     @endif
                 </div>
             @endif
         </div>
 
+        <div>
+            <x-input-label for="ville" :value="__('Ville')" />
+            <x-text-input id="ville" name="ville" type="text" class="mt-1 block w-full" :value="old('ville', $user->ville)" required autofocus autocomplete="ville" />
+            <x-input-error class="mt-2" :messages="$errors->get('ville')" />
+        </div>
+
+        <div>
+            <x-input-label for="adresse" :value="__('Adresse')" />
+            <x-text-input id="adresse" name="adresse" type="text" class="mt-1 block w-full" :value="old('adresse', $user->adresse)" required autofocus autocomplete="adresse" />
+            <x-input-error class="mt-2" :messages="$errors->get('adresse')" />
+        </div>
+
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button>{{ __('Sauvegarder') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p
@@ -57,7 +69,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
+                >{{ __('Sauvegardé.') }}</p>
             @endif
         </div>
     </form>
