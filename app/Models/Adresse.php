@@ -12,4 +12,8 @@ class Adresse extends Model
     public function ville() {
         return $this->belongsTo(Ville::class);
     }
+
+    public function users() {
+        return $this->hasMany(User::class);
+    }
 }

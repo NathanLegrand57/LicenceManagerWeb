@@ -12,4 +12,8 @@ class Licence extends Model
     public function produit() {
         return $this->belongsTo(Produit::class);
     }
+
+    public function licences_choisies() {
+        return $this->hasMany(LicenceChoisie::class);
+    }
 }

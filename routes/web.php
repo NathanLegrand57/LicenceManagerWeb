@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LicenceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/', [LicenceController::class, 'index']);
+// Route::get('/', [LicenceController::class, 'index']);
 
 
 Route::get('/dashboard', function () {
