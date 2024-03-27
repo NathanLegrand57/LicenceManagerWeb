@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('villes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string('nom',75);
-            $table->integer('code_postal');
+        Schema::table('licences', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 
@@ -24,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('villes', function (Blueprint $table) {
-            $table->dropSoftDeletes();
+        Schema::table('licences', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 };

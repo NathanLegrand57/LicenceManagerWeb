@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('villes', function (Blueprint $table) {
+        Schema::create('produits', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nom',75);
-            $table->integer('code_postal');
+            $table->string('libelle', 75);
         });
     }
 
@@ -24,8 +23,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('villes', function (Blueprint $table) {
-            $table->dropSoftDeletes();
+        Schema::table('produits', function (Blueprint $table) {
+            $table->softDeletes();
         });
     }
 };
