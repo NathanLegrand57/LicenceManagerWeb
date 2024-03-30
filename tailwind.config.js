@@ -10,6 +10,32 @@ export default {
     ],
 
     theme: {
+        colors: {
+            transparent: 'transparent',
+            current: 'currentColor',
+            black: colors.black,
+            blue: colors.blue,
+            cyan: colors.cyan,
+            emerald: colors.emerald,
+            fuchsia: colors.fuchsia,
+            gray: colors.trueGray,
+            blueGray: colors.blueGray,
+            coolGray: colors.coolGray,
+            warmGray: colors.warmGray,
+            green: colors.green,
+            indigo: colors.indigo,
+            lime: colors.lime,
+            orange: colors.orange,
+            pink: colors.pink,
+            purple: colors.purple,
+            red: colors.red,
+            rose: colors.rose,
+            sky: colors.sky,
+            teal: colors.teal,
+            violet: colors.violet,
+            yellow: colors.amber,
+            white: colors.white,
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
