@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\LicenceChoisie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LicenceChoisieController extends Controller
 {
@@ -12,7 +13,12 @@ class LicenceChoisieController extends Controller
      */
     public function index()
     {
-        //
+
+    $user = Auth::user();
+
+    $licences_choisies = $user->licences_choisies;
+
+    return view('licencechoisie.index', compact('licences_choisies'));
     }
 
     /**
