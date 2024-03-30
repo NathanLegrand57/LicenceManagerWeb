@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\LicenceChoisie;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,12 +14,21 @@ class LicenceChoisieController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+        $licences_choisies = $user->licences_choisies;
 
-    $user = Auth::user();
+        $licences_choisies->each(function ($licence) {
+            $dateFin = Carbon::parse($licence->date_fin);
+            $aujourdhui = Carbon::now();
 
-    $licences_choisies = $user->licences_choisies;
+            if ($dateFin->isPast()) {
+                $licence->jours_restants = 0;
+            } else {
+                $licence->jours_restants = $aujourdhui->diffInDays($dateFin);
+            }
+        });
 
-    return view('licencechoisie.index', compact('licences_choisies'));
+        return view('licencechoisie.index', compact('licences_choisies'));
     }
 
     /**
@@ -26,7 +36,9 @@ class LicenceChoisieController extends Controller
      */
     public function create()
     {
-        //
+        $licences_choisies = LicenceChoisie::all();
+
+        return view('licencechoisie.create', compact('licences_choisies'));
     }
 
     /**
