@@ -12,8 +12,16 @@
                         {{ \Carbon\Carbon::parse($licence_choisie->date_fin)->format('d/m/Y') }}</p>
                     @if ($licence_choisie->jours_restants <= 0)
                         <p class="text-blue-400">Licence expirée</p>
-                        {{-- <a href="{{ route('demande-licence.renouveler', ['licenceChoisie' => $licence_choisie->id]) }}"
-                            class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded mt-6">Renouveler</a> --}}
+                        <form
+                            action="{{ route('demande-licence.renouveler', ['licenceChoisie' => $licence_choisie->id]) }}"
+                            method="POST">
+                            @csrf
+                            <button type="submit"
+                                class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded mt-6">Renouveler</button>
+                        </form>
+                    @elseif ($licence_choisie->jours_restants <= 5)
+                        <p class="text-gray-700">Jours restants avant expiration de la licence :
+                        <span class="text-red-500">{{ $licence_choisie->jours_restants }}</span></p>
                         <form
                             action="{{ route('demande-licence.renouveler', ['licenceChoisie' => $licence_choisie->id]) }}"
                             method="POST">

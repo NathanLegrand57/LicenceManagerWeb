@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Licence;
+use App\Models\LicenceChoisie;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,8 +17,11 @@ return new class extends Migration
         Schema::create('demande_licences', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->date('debut_licence');
-            $table->foreignIdFor(Licence::class, 'licence_id');
+            $table->string('type_demande', 75);
+            $table->date('date_debut_licence');
+            $table->date('date_fin_licence');
+            $table->foreignIdFor(LicenceChoisie::class, 'licencechoisie_id')->nullable();
+            $table->foreignIdFor(Licence::class, 'licence_id')->nullable();
             $table->foreignIdFor(User::class, 'user_id');
         });
     }

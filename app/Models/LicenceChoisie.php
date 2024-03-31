@@ -21,4 +21,9 @@ class LicenceChoisie extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function demandes_licences()
+    {
+        return $this->hasMany(DemandeLicence::class);
+    }
 }

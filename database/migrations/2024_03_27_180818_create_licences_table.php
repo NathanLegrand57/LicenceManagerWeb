@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('libelle', 75);
-            $table->integer('prix');
+            $table->float('prix');
             $table->integer('duree');
             $table->foreignIdFor(Produit::class, 'produit_id');
         });

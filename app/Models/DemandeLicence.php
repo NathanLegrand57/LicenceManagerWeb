@@ -9,12 +9,18 @@ class DemandeLicence extends Model
 {
     use HasFactory;
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function licence() {
+    public function licence()
+    {
         return $this->belongsTo(Licence::class);
     }
 
+    public function licencechoisie()
+    {
+        return $this->belongsTo(LicenceChoisie::class);
+    }
 }
