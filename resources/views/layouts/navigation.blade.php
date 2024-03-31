@@ -5,14 +5,14 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('meslicences.index') }}">
+                    <a href="{{ route('mes-licences.index') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('meslicences.index')" :active="request()->routeIs('meslicences.index')">
+                    <x-nav-link :href="route('mes-licences.index')" :active="request()->routeIs('mes-licences.index')">
                         {{ __('Mes licences') }}
                     </x-nav-link>
                 </div>

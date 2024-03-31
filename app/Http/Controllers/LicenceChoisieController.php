@@ -28,7 +28,7 @@ class LicenceChoisieController extends Controller
             }
         });
 
-        return view('licencechoisie.index', compact('licences_choisies'));
+        return view('licence-choisie.index', compact('licences_choisies'));
     }
 
     /**
@@ -36,9 +36,7 @@ class LicenceChoisieController extends Controller
      */
     public function create()
     {
-        $licences_choisies = LicenceChoisie::all();
-
-        return view('licencechoisie.create', compact('licences_choisies'));
+        //
     }
 
     /**
