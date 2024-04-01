@@ -16,7 +16,8 @@ class DemandeLicenceController extends Controller
      */
     public function index()
     {
-        //
+        $demande_licences = DemandeLicence::all();
+        return view('demande-licence.index', compact('demande_licences'));
     }
 
     /**

@@ -1,6 +1,9 @@
 <x-app-layout>
-    <a class="bg-green-600 hover:bg-blue-700 duration-500 text-white text-sm font-bold py-2 px-2 rounded mt-6" href="{{ route('demande-licence.index')}}">Demander une licence</a>
-    <h1 class="text-2xl font-semibold text-center mt-14 mb-10">Mes licences</h1>
+    <p class="flex justify-end mt-10 mr-20">
+        <a class="bg-green-600 hover:bg-green-700 duration-500 text-white text-sm font-bold py-1 px-2 rounded"
+            href="{{ route('licence.index') }}">Demander une licence</a>
+    </p>
+    <h1 class="text-4xl font-semibold text-center mb-10">Mes licences</h1>
     <section class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center gap-y-10 gap-x-10 mt-10 mb-20">
         @forelse ($licences_choisies as $licence_choisie)
             <div class="bg-white p-6 mt-6 rounded-lg shadow-md leading-8">
@@ -35,9 +38,11 @@
                 @endif
             </div>
         @empty
-            <p class="ms-3">
+        <div class="md:col-span-2 text-center">
+            <p class="text-center">
                 Aucune licence connue
             </p>
+        </div>
         @endforelse
     </section>
 </x-app-layout>
