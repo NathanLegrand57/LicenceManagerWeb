@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DemandeLicence;
+use App\Models\Licence;
 use App\Models\LicenceChoisie;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -75,6 +76,26 @@ class DemandeLicenceController extends Controller
         }
     }
 
+    public function ajouter(Licence $licence, Request $request)
+    {
+
+        $demandeAjout = new DemandeLicence();
+
+        $typeDemande = "Ajout de licence";
+        $demandeAjout->type_demande = $typeDemande;
+        $demandeAjout->libelle = $licence->libelle;
+        $demandeAjout->duree = $licence->duree;
+        $demandeAjout->prix = $licence->prix;
+        $demandeAjout->produit = $licence->produit->libelle;
+
+        $demandeAjout->licence_id = $licence->id;
+        $demandeAjout->user_id = Auth::id();
+
+        session()->put('demandeAjout', $demandeAjout);
+
+        return redirect()->route('demande-licence.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -83,8 +104,10 @@ class DemandeLicenceController extends Controller
 
         $demandeRenouvellement = session('demandeRenouvellement');
 
-        // Vérifier si la demande de renouvellement existe
+        // Enregistrement d'une demande de renouvellement de licence
+
         if ($demandeRenouvellement) {
+
             // Créer un nouvel objet DemandeLicence
             $nouvelleDemande = new DemandeLicence();
 
@@ -103,10 +126,41 @@ class DemandeLicenceController extends Controller
             Session::flash('success');
 
             // Supprimer la demande de renouvellement de la session après l'enregistrement
-            // session()->forget('demandeRenouvellement');
+            session()->forget('demandeRenouvellement');
 
             // Rediriger l'utilisateur vers une page de confirmation ou une autre page appropriée
             return redirect()->route('demande-licence.create');
+        }
+
+        // Enregistrement d'une demande d'ajout de licence
+
+        $demandeAjout = session('demandeAjout');
+
+        if($demandeAjout) {
+
+                // Créer un nouvel objet DemandeLicence
+                $nouvelleDemande = new DemandeLicence();
+                // Assigner les valeurs de la demande d'ajout à l'objet DemandeLicence
+                $nouvelleDemande->type_demande = $demandeAjout->type_demande;
+
+                // $nouvelleDemande->date_debut_licence = Carbon::parse($request['date_debut_licence']);
+                $nouvelleDemande->date_debut_licence = $request->input('date_debut_licence');
+                // $nouvelleDemande->date_debut_licence = Carbon::parse($demandeAjout->date_debut_licence);
+                $nouvelleDemande->date_fin_licence = Carbon::parse($demandeAjout->date_fin_licence);
+                $nouvelleDemande->licence_id = $demandeAjout->licence_id;
+                $nouvelleDemande->user_id = $demandeAjout->user_id;
+
+                // dd($nouvelleDemande);
+                // Enregistrer la nouvelle demande dans la base de données
+                $nouvelleDemande->save();
+
+                Session::flash('success');
+
+                // Supprimer la demande d'ajout de la session après l'enregistrement
+                session()->forget('demandeAjout');
+
+                // Rediriger l'utilisateur vers une page de confirmation ou une autre page appropriée
+                return redirect()->route('demande-licence.create');
         }
     }
     /**

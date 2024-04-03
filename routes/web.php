@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/mes-licences', LicenceChoisieController::class);
     Route::resource('/demande-licence', DemandeLicenceController::class);
     Route::post('/demande-licence/renouveler/{licenceChoisie}', [DemandeLicenceController::class, 'renouveler'])->name('demande-licence.renouveler');
+    Route::post('/demande-licence/ajouter/{licence}', [DemandeLicenceController::class, 'ajouter'])->name('demande-licence.ajouter');
 });
 
 require __DIR__.'/auth.php';

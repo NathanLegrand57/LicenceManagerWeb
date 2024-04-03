@@ -14,21 +14,26 @@
                     <h5 class="text-gray-700">Produit : {{ $licence->produit->libelle }}</h5>
                     <h5 class="text-gray-500 mb-4">{{ $licence->produit->description }}</h5>
 
-                    <div class="flex">
+                    <div class="flex items-end" flex-end;">
                         <p class="">
-                            <a class="bg-blue-500 hover:bg-blue-700 duration-500 text-white text-sm font-bold py-1 px-2 rounded"
-                            href="{{ route('licence.index') }}">En savoir plus</a>
+                            <a class="bg-blue-500 my-auto hover:bg-blue-700 duration-500 text-white text-sm font-bold py-1 px-2 rounded"
+                                href="{{ route('licence.index') }}">En savoir plus</a>
                             {{-- Changer la route en .show --}}
-                            {{-- Regarder pour une faire une grid pour que le bouton soit en bas de la div pour être aligné avec l'autre bouton --}}
                         </p>
                         <div class="justify-center ml-auto">
-                            <h5 class="text-gray-700 text-lg font-semibold flex justify-center">{{ $licence->prix }}.00 €</h5>
+                            <h5 class="text-gray-700 text-lg font-semibold flex justify-center">{{ $licence->prix }}.00
+                                €</h5>
                             <p>
-                                <a class="bg-green-600 hover:bg-green-700 duration-500 text-white text-sm font-bold py-1 px-2 rounded"
-                                    href="{{ route('licence.index') }}">Demander</a>
+                            <form action="{{ route('demande-licence.ajouter', ['licence' => $licence->id]) }}"
+                                method="POST">
+                                @csrf
+                                <button type="submit"
+                                    class="bg-green-600 hover:bg-green-700 duration-500 text-white text-sm font-bold py-1 px-2 rounded mt-1">Demander</button>
+                            </form>
                             </p>
                         </div>
                     </div>
+
                     <div class="btn-toolbar">
 
                     </div>

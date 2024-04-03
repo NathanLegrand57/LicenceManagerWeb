@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('date_debut_licence');
             $table->date('date_fin_licence');
             $table->foreignIdFor(LicenceChoisie::class, 'licencechoisie_id')->nullable();
-            $table->foreignIdFor(Licence::class, 'licence_id')->nullable();
+            $table->foreignIdFor(Licence::class, 'licence_id');
             $table->foreignIdFor(User::class, 'user_id');
         });
     }
