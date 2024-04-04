@@ -17,7 +17,7 @@
                 <h5 class="text-gray-700">Produit : {{ $licence->produit->libelle }}</h5>
                 <h5 class="text-gray-500 mb-4">{{ $licence->produit->description }}</h5>
 
-                <div class="flex items-end" flex-end;">
+                <div class="flex items-end">
                     <p>
                         <a class="bg-blue-500 my-auto hover:bg-blue-700 duration-500 text-white font-bold py-1 px-2 rounded"
                             href="{{ route('licence.index') }}">En savoir plus</a>
