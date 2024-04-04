@@ -28,6 +28,7 @@ class DemandeLicenceController extends Controller
     public function create()
     {
         $demandes_licences = DemandeLicence::all();
+
         return view('demande-licence.create', compact('demandes_licences'));
     }
 
@@ -68,6 +69,15 @@ class DemandeLicenceController extends Controller
             // Assigner la nouvelle date de fin à la demande de renouvellement
             $demandeRenouvellement->date_fin_licence = $nouvelleDateFin;
 
+            // Vérifier si une demande d'ajout est en cours et la supprimer si c'est le cas
+            if (session()->has('demandeRenouvellement')) {
+                session()->forget('demandeRenouvellement');
+            }
+
+            if (session()->has('demandeAjout')) {
+                session()->forget('demandeAjout');
+            }
+
             // Stocker la demande de renouvellement en session
             session()->put('demandeRenouvellement', $demandeRenouvellement);
 
@@ -90,6 +100,15 @@ class DemandeLicenceController extends Controller
 
         $demandeAjout->licence_id = $licence->id;
         $demandeAjout->user_id = Auth::id();
+
+
+        if (session()->has('demandeRenouvellement')) {
+            session()->forget('demandeRenouvellement');
+        }
+
+        if (session()->has('demandeAjout')) {
+            session()->forget('demandeAjout');
+        }
 
         session()->put('demandeAjout', $demandeAjout);
 
@@ -143,9 +162,7 @@ class DemandeLicenceController extends Controller
                 // Assigner les valeurs de la demande d'ajout à l'objet DemandeLicence
                 $nouvelleDemande->type_demande = $demandeAjout->type_demande;
 
-                // $nouvelleDemande->date_debut_licence = Carbon::parse($request['date_debut_licence']);
-                $nouvelleDemande->date_debut_licence = $request->input('date_debut_licence');
-                // $nouvelleDemande->date_debut_licence = Carbon::parse($demandeAjout->date_debut_licence);
+                $nouvelleDemande->date_debut_licence = Carbon::parse($demandeAjout->date_debut_licence);
                 $nouvelleDemande->date_fin_licence = Carbon::parse($demandeAjout->date_fin_licence);
                 $nouvelleDemande->licence_id = $demandeAjout->licence_id;
                 $nouvelleDemande->user_id = $demandeAjout->user_id;

@@ -49,8 +49,8 @@
     @endif
 
     @if (Session::has('success'))
-        <div class="text-green-500">
-            <p class=" text-xl">Votre demande a bien été prise en compte !</p>
+        <div class="text-green-500 text-center">
+            <p class="text-xl">Votre demande a bien été prise en compte !</p>
             <p>Vous allez être redirigé vers la liste de vos licences dans quelques secondes</p>
         </div>
         <script>
