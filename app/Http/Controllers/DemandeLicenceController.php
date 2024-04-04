@@ -48,6 +48,7 @@ class DemandeLicenceController extends Controller
 
             $typeDemande = "Renouvellement de licence";
             $demandeRenouvellement->type_demande = $typeDemande;
+            $demandeRenouvellement->duree = $licenceChoisie->licence->duree;
 
             $demandeRenouvellement->licencechoisie_id = $licenceChoisie->id;
             $demandeRenouvellement->licence_id = $licenceChoisie->licence_id;
