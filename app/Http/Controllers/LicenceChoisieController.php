@@ -31,6 +31,10 @@ class LicenceChoisieController extends Controller
         return view('licence-choisie.index', compact('licences_choisies'));
     }
 
+    public function ajouterLicenceClient() {
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      */

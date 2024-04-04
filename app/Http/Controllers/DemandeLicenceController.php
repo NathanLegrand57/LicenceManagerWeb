@@ -17,8 +17,8 @@ class DemandeLicenceController extends Controller
      */
     public function index()
     {
-        $demande_licences = DemandeLicence::all();
-        return view('demande-licence.index', compact('demande_licences'));
+        $demandes_licences = DemandeLicence::all();
+        return view('demande-licence.index', compact('demandes_licences'));
     }
 
     /**
@@ -210,6 +210,7 @@ class DemandeLicenceController extends Controller
      */
     public function destroy(DemandeLicence $demandeLicence)
     {
-        //
+        $demandeLicence -> delete();
+        return redirect()->route("demande-licence.index");
     }
 }
