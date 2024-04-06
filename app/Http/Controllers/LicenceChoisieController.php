@@ -32,26 +32,9 @@ class LicenceChoisieController extends Controller
         return view('licence-choisie.index', compact('licences_choisies'));
     }
 
-    public function ajouterLicenceClient() {
-
-
-
-        return redirect()->route('demande-licence.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function ajouterLicenceClient(Request $request)
     {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
         $demandeLicenceId = $request->input('demandeLicenceId');
 
         // Récupérer la demande de licence associée à cet ID
@@ -69,10 +52,26 @@ class LicenceChoisieController extends Controller
         // Enregistrer la licence choisie dans la base de données
         $licenceChoisie->save();
 
-        $demandeLicence -> delete();
+        $demandeLicence->delete();
 
         // Rediriger l'utilisateur vers la page de demande de licence
-        return redirect()->route('demande-licence.index');
+        return redirect()->route('mes-licences.index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        //
     }
 
     /**

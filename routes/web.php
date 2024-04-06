@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/licence', LicenceController::class);
     Route::resource('/mes-licences', LicenceChoisieController::class);
-    Route::post('/mes-licences/ajouterLicenceClient/{demandeLicenceClient}', [LicenceChoisieController::class, 'ajouterLicenceClient'])->name('mes-licences.ajouterLicenceClient');
+    Route::post('/mes-licences/ajouterLicenceClient', [LicenceChoisieController::class, 'ajouterLicenceClient'])->name('mes-licences.ajouterLicenceClient');
     Route::resource('/demande-licence', DemandeLicenceController::class);
     Route::post('/demande-licence/renouveler/{licenceChoisie}', [DemandeLicenceController::class, 'renouveler'])->name('demande-licence.renouveler');
     Route::post('/demande-licence/ajouter/{licence}', [DemandeLicenceController::class, 'ajouter'])->name('demande-licence.ajouter');

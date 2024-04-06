@@ -8,9 +8,9 @@
                     {{ $demande_licence->type_demande }}</h5>
                 <p>Licence demandée : {{ $demande_licence->licence->libelle }}</p>
                 <p class="text-gray-700">Début de la souscription :
-                    {{ \Carbon\Carbon::parse($demande_licence->date_debut)->format('d/m/Y') }}</p>
+                    {{ \Carbon\Carbon::parse($demande_licence->date_debut_licence)->format('d/m/Y') }}</p>
                 <p class="text-gray-700">Fin de la souscription :
-                    {{ \Carbon\Carbon::parse($demande_licence->date_fin)->format('d/m/Y') }}</p>
+                    {{ \Carbon\Carbon::parse($demande_licence->date_fin_licence)->format('d/m/Y') }}</p>
                 <p>Entreprise souhaitant : {{ $demande_licence->user->libelle }}</p>
                 <div class="flex mt-4 items-end justify-between">
                     <form method="POST" action="{{ route('demande-licence.destroy', $demande_licence) }}">
@@ -19,7 +19,7 @@
                         <button type="submit"
                             class="text-white bg-red-600 font-semibold py-0 px-4 rounded">Refuser</button>
                     </form>
-                    <form action="{{ route('mes-licences.store') }}" method="POST">
+                    <form action="{{ route('mes-licences.ajouterLicenceClient',  ) }}" method="POST">
                         @csrf
                         <input type="hidden" name="demandeLicenceId" value="{{ $demande_licence->id }}">
                         <button type="submit"
