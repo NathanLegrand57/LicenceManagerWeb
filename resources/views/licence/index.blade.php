@@ -10,11 +10,11 @@
             <div class="bg-white p-6 mt-6 rounded-lg shadow-md leading-7">
                 <h5 class="text-xl font-semibold">{{ $licence->libelle }}</h5>
                 @if ($licence->duree > 31)
-                    <h5 class="text-gray-700">Licence annuelle</h5>
+                    <h5 class="text-gray-700"><strong>Licence annuelle</strong></h5>
                 @else
-                    <h5 class="text-gray-700">Licence mensuelle</h5>
+                    <h5 class="text-gray-700"><strong>Licence mensuelle</strong></h5>
                 @endif
-                <h5 class="text-gray-700">Produit : {{ $licence->produit->libelle }}</h5>
+                <h5 class="text-gray-700"><strong>Produit :</strong> {{ $licence->produit->libelle }}</h5>
                 <h5 class="text-gray-500 mb-4">{{ $licence->produit->description }}</h5>
 
                 <div class="flex items-end">

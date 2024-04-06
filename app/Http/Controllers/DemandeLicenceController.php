@@ -123,16 +123,16 @@ class DemandeLicenceController extends Controller
 
         $demandeRenouvellement = session('demandeRenouvellement');
 
-        $request->validate([
-            'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeRenouvellement->licence->duree . ' days',
-        ], [
-            'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
-            'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeRenouvellement->licence->duree . ' jours à partir de la date actuelle.',
-        ]);
 
         // Enregistrement d'une demande de renouvellement de licence
 
         if ($demandeRenouvellement) {
+            $request->validate([
+                'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeRenouvellement->licence->duree . ' days',
+            ], [
+                'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
+                'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeRenouvellement->licence->duree . ' jours à partir de la date actuelle.',
+            ]);
 
             // Créer un nouvel objet DemandeLicence
             $nouvelleDemande = new DemandeLicence();
@@ -171,14 +171,14 @@ class DemandeLicenceController extends Controller
 
         $demandeAjout = session('demandeAjout');
 
-        $request->validate([
-            'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeAjout->licence->duree . ' days',
-        ], [
-            'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
-            'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeAjout->licence->duree . ' jours à partir de la date actuelle.',
-        ]);
 
         if ($demandeAjout) {
+            $request->validate([
+                'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeAjout->licence->duree . ' days',
+            ], [
+                'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
+                'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeAjout->licence->duree . ' jours à partir de la date actuelle.',
+            ]);
 
             // Créer un nouvel objet DemandeLicence
             $nouvelleDemande = new DemandeLicence();

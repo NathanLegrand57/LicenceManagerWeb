@@ -67,7 +67,7 @@ class LicenceChoisieController extends Controller
             ->where('user_id', $demandeLicence->user_id)
             ->first();
 
-        $licenceChoisie->date_debut = Carbon::now();
+        $licenceChoisie->date_debut = $demandeLicence->date_debut_licence;
         $licenceChoisie->date_fin = $demandeLicence->date_fin_licence;
 
         $licenceChoisie->save();

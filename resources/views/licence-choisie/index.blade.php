@@ -9,31 +9,36 @@
             <div class="bg-white p-6 mt-6 rounded-lg shadow-md leading-8">
                 <h5 class="text-xl font-semibold mb-2">
                     {{ $licence_choisie->licence->libelle }}</h5>
-                <p class="text-gray-700">Début de la souscription :
+
+                <p class="text-gray-700"><strong>Début de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($licence_choisie->date_debut)->format('d/m/Y') }}</p>
-                <p class="text-gray-700">Fin de la souscription :
+
+                <p class="text-gray-700"><strong>Fin de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($licence_choisie->date_fin)->format('d/m/Y') }}</p>
+
                 @if ($licence_choisie->jours_restants <= 0)
-                    <p class="text-red-500">Licence expirée</p>
+                    <p class="text-red-500"><strong>Licence expirée</strong></p>
                     <form action="{{ route('demande-licence.renouveler', ['licenceChoisie' => $licence_choisie->id]) }}"
                         method="POST">
                         @csrf
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-0 px-2 rounded mt-6">Renouveler</button>
                     </form>
+
                 @elseif ($licence_choisie->jours_restants <= 5)
-                    <p class="text-gray-700">Jours restants avant expiration de la licence :
+                    <p class="text-gray-700"><strong>Jours restants avant expiration de la licence :</strong>
                         <span class="text-red-500">{{ $licence_choisie->jours_restants }}</span>
                     </p>
-                    <p class="text-red-500">Attention ! La licence expire bientôt.</p>
+                    <p class="text-red-500"><strong>Attention ! La licence expire bientôt.</strong></p>
                     <form action="{{ route('demande-licence.renouveler', ['licenceChoisie' => $licence_choisie->id]) }}"
                         method="POST">
                         @csrf
                         <button type="submit"
                             class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-0 px-2 rounded mt-6">Renouveler</button>
                     </form>
+
                 @else
-                    <p class="text-gray-700">Jours restants avant expiration de la licence :
+                    <p class="text-gray-700"><strong>Jours restants avant expiration de la licence :</strong>
                         {{ $licence_choisie->jours_restants }}</p>
                 @endif
 
