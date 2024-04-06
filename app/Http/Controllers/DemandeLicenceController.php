@@ -58,17 +58,17 @@ class DemandeLicenceController extends Controller
 
             $dateFin = Carbon::parse($licenceChoisie->date_fin);
 
-            // Vérifier si la date de fin est passée (la licence est expirée)
-            if ($dateFin->isPast()) {
-                // Si la licence est expirée, il faut calculer la nouvelle date de fin à partir de la date actuelle
-                $nouvelleDateFin = Carbon::now()->addDays($licenceChoisie->licence->duree);
-            } else {
-                // Si la licence n'est pas expirée, il faut calculer la nouvelle date de fin à partir de l'ancienne date de fin
-                $nouvelleDateFin = $dateFin->addDays($licenceChoisie->licence->duree);
-            }
+            // // Vérifier si la date de fin est passée (la licence est expirée)
+            // if ($dateFin->isPast()) {
+            //     // Si la licence est expirée, il faut calculer la nouvelle date de fin à partir de la date actuelle
+            //     $nouvelleDateFin = Carbon::now()->addDays($licenceChoisie->licence->duree);
+            // } else {
+            //     // Si la licence n'est pas expirée, il faut calculer la nouvelle date de fin à partir de l'ancienne date de fin
+            //     $nouvelleDateFin = $dateFin->addDays($licenceChoisie->licence->duree);
+            // }
 
             // Assigner la nouvelle date de fin à la demande de renouvellement
-            $demandeRenouvellement->date_fin_licence = $nouvelleDateFin;
+            // $demandeRenouvellement->date_fin_licence = $nouvelleDateFin;
 
             // Vérifier si une demande d'ajout est en cours et la supprimer si c'est le cas
             if (session()->has('demandeRenouvellement')) {
@@ -102,7 +102,6 @@ class DemandeLicenceController extends Controller
         $demandeAjout->licence_id = $licence->id;
         $demandeAjout->user_id = Auth::id();
 
-
         if (session()->has('demandeRenouvellement')) {
             session()->forget('demandeRenouvellement');
         }
@@ -124,6 +123,13 @@ class DemandeLicenceController extends Controller
 
         $demandeRenouvellement = session('demandeRenouvellement');
 
+        $request->validate([
+            'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeRenouvellement->licence->duree . ' days',
+        ], [
+            'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
+            'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeRenouvellement->licence->duree . ' jours à partir de la date actuelle.',
+        ]);
+
         // Enregistrement d'une demande de renouvellement de licence
 
         if ($demandeRenouvellement) {
@@ -134,8 +140,17 @@ class DemandeLicenceController extends Controller
             // Assigner les valeurs de la demande de renouvellement à l'objet DemandeLicence
 
             $nouvelleDemande->type_demande = $demandeRenouvellement->type_demande;
-            $nouvelleDemande->date_debut_licence = Carbon::parse($demandeRenouvellement->date_debut_licence);
-            $nouvelleDemande->date_fin_licence = Carbon::parse($demandeRenouvellement->date_fin_licence);
+            // $nouvelleDemande->date_debut_licence = Carbon::parse($demandeRenouvellement->date_debut_licence);
+            // $nouvelleDemande->date_fin_licence = Carbon::parse($demandeRenouvellement->date_fin_licence);
+
+            $nouvelleDemande->date_debut_licence = Carbon::parse($request->input('date_debut_licence'));
+            $dateDebutLicence = $nouvelleDemande->date_debut_licence;
+
+            // Calculer la date de fin en ajoutant la durée de la licence à la date de début
+            $dateFinLicence = $dateDebutLicence->copy()->addDays($demandeRenouvellement->licence->duree);
+
+            $nouvelleDemande->date_fin_licence = $dateFinLicence;
+
             $nouvelleDemande->licencechoisie_id = $demandeRenouvellement->licencechoisie_id;
             $nouvelleDemande->licence_id = $demandeRenouvellement->licence_id;
             $nouvelleDemande->user_id = $demandeRenouvellement->user_id;
@@ -148,7 +163,7 @@ class DemandeLicenceController extends Controller
             // Supprimer la demande de renouvellement de la session après l'enregistrement
             session()->forget('demandeRenouvellement');
 
-            // Rediriger l'utilisateur vers une page de confirmation ou une autre page appropriée
+            // Rediriger l'utilisateur vers la page du formulaire de renouvellement
             return redirect()->route('demande-licence.create');
         }
 
@@ -156,29 +171,43 @@ class DemandeLicenceController extends Controller
 
         $demandeAjout = session('demandeAjout');
 
-        if($demandeAjout) {
+        $request->validate([
+            'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeAjout->licence->duree . ' days',
+        ], [
+            'date_debut_licence.after_or_equal' => 'La date de début doit être égale ou supérieure à la date actuelle.',
+            'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeAjout->licence->duree . ' jours à partir de la date actuelle.',
+        ]);
 
-                // Créer un nouvel objet DemandeLicence
-                $nouvelleDemande = new DemandeLicence();
-                // Assigner les valeurs de la demande d'ajout à l'objet DemandeLicence
-                $nouvelleDemande->type_demande = $demandeAjout->type_demande;
+        if ($demandeAjout) {
 
-                $nouvelleDemande->date_debut_licence = Carbon::parse($demandeAjout->date_debut_licence);
-                $nouvelleDemande->date_fin_licence = Carbon::parse($demandeAjout->date_fin_licence);
-                $nouvelleDemande->licence_id = $demandeAjout->licence_id;
-                $nouvelleDemande->user_id = $demandeAjout->user_id;
+            // Créer un nouvel objet DemandeLicence
+            $nouvelleDemande = new DemandeLicence();
 
-                // dd($nouvelleDemande);
-                // Enregistrer la nouvelle demande dans la base de données
-                $nouvelleDemande->save();
+            // Assigner les valeurs de la demande d'ajout à l'objet DemandeLicence
+            $nouvelleDemande->type_demande = $demandeAjout->type_demande;
 
-                Session::flash('success');
+            $nouvelleDemande->date_debut_licence = Carbon::parse($request->input('date_debut_licence'));
+            $dateDebutLicence = $nouvelleDemande->date_debut_licence;
 
-                // Supprimer la demande d'ajout de la session après l'enregistrement
-                session()->forget('demandeAjout');
+            // Calculer la date de fin en ajoutant la durée de la licence à la date de début
+            $dateFinLicence = $dateDebutLicence->copy()->addDays($demandeAjout->licence->duree);
 
-                // Rediriger l'utilisateur vers une page de confirmation ou une autre page appropriée
-                return redirect()->route('demande-licence.create');
+            $nouvelleDemande->date_fin_licence = $dateFinLicence;
+
+
+            $nouvelleDemande->licence_id = $demandeAjout->licence_id;
+            $nouvelleDemande->user_id = $demandeAjout->user_id;
+
+            // Enregistrer la nouvelle demande dans la base de données
+            $nouvelleDemande->save();
+
+            Session::flash('success');
+
+            // Supprimer la demande d'ajout de la session après l'enregistrement
+            session()->forget('demandeAjout');
+
+            // Rediriger l'utilisateur vers la page du formulaire de renouvellement
+            return redirect()->route('demande-licence.create');
         }
     }
     /**
@@ -210,7 +239,7 @@ class DemandeLicenceController extends Controller
      */
     public function destroy(DemandeLicence $demandeLicence)
     {
-        $demandeLicence -> delete();
+        $demandeLicence->delete();
         return redirect()->route("demande-licence.index");
     }
 }

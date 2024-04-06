@@ -17,19 +17,41 @@
                 @else
                     <h5 class="text-gray-700"><strong>Licence mensuelle</strong></h5>
                 @endif
-                <p><strong>Nouvelle date d'expiration prévue :</strong>
-                    {{ $demandeRenouvellement->date_fin_licence->format('d/m/Y') }}
-                </p>
+
                 <p><strong>Prix total :</strong> {{ $demandeRenouvellement->licence->prix }}€</p>
 
-                <form action="{{ route('demande-licence.store') }}" method="POST" class="flex justify-center mt-6">
-                    @csrf
+                <div class="mt-2 mb-4">
+                    <form action="{{ route('demande-licence.store') }}" method="POST" class="">
+                        @csrf
+                        <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
+                        <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence"
+                            required>
+                        <input class="rounded" type="date" name="date_fin_licence" id="date_fin_licence" readonly>
+                </div>
+                @error('date_debut_licence')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
+
+                <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-3 rounded mt-4">Confirmer la
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
+                        la
                         demande</button>
+                </div>
                 </form>
             </div>
         </div>
+        <script>
+            document.getElementById('date_debut_licence').addEventListener('change', function() {
+                var dateDebut = new Date(this.value);
+                var dureeLicence = {{ $demandeRenouvellement->duree }};
+                var dateFin = new Date(dateDebut.getTime() + dureeLicence * 24 * 60 * 60 *
+                1000); // Calcul de la date de fin
+                var dateFinFormatted = dateFin.toISOString().slice(0, 10); // Formatage de la date de fin (YYYY-MM-DD)
+                document.getElementById('date_fin_licence').value =
+                dateFinFormatted;
+            });
+        </script>
     @endif
 
     @if (session('demandeAjout'))
@@ -46,17 +68,24 @@
                     <h5><strong>Licence mensuelle</strong></h5>
                 @endif
                 <p><strong>Produit :</strong> {{ $demandeAjout->produit }}</p>
-                <div class="mt-2 mb-4">
-                    <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br/>
-                    <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence">
-                </div>
                 <p><strong>Prix total :</strong> {{ $demandeAjout->prix }}€</p>
 
-                <form action="{{ route('demande-licence.store') }}" method="POST" class="flex justify-center mt-4">
-                    @csrf
+                <div class="mt-2 mb-4">
+                    <form action="{{ route('demande-licence.store') }}" method="POST" class="">
+                        @csrf
+                        <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
+                        <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence"
+                            required>
+                </div>
+                @error('date_debut_licence')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
+                <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-4 rounded mt-6">Confirmer la
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
+                        la
                         demande</button>
+                </div>
                 </form>
             </div>
         </div>
