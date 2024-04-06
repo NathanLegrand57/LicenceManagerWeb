@@ -40,7 +40,6 @@ class LicenceChoisieController extends Controller
         // Récupérer la demande de licence associée à cet ID
         $demandeLicence = DemandeLicence::findOrFail($demandeLicenceId);
 
-        // Créer une nouvelle instance de LicenceChoisie
         $licenceChoisie = new LicenceChoisie();
 
         // Remplir les données de la licence choisie avec les données de la demande de licence
@@ -49,13 +48,33 @@ class LicenceChoisieController extends Controller
         $licenceChoisie->date_debut = $demandeLicence->date_debut_licence;
         $licenceChoisie->date_fin = $demandeLicence->date_fin_licence;
 
-        // Enregistrer la licence choisie dans la base de données
         $licenceChoisie->save();
 
         $demandeLicence->delete();
 
-        // Rediriger l'utilisateur vers la page de demande de licence
-        return redirect()->route('mes-licences.index');
+        return redirect()->route('demande-licence.index');
+    }
+
+    public function renouvelerLicenceClient(Request $request)
+    {
+        $demandeLicenceId = $request->input('demandeLicenceId');
+
+        // Récupérer la demande de licence associée à cet ID
+        $demandeLicence = DemandeLicence::findOrFail($demandeLicenceId);
+
+        // Trouver la licence choisie existante liée à cette demande de renouvellement
+        $licenceChoisie = LicenceChoisie::where('licence_id', $demandeLicence->licence_id)
+            ->where('user_id', $demandeLicence->user_id)
+            ->first();
+
+        $licenceChoisie->date_debut = Carbon::now();
+        $licenceChoisie->date_fin = $demandeLicence->date_fin_licence;
+
+        $licenceChoisie->save();
+
+        $demandeLicence->delete();
+
+        return redirect()->route('demande-licence.index');
     }
 
     /**

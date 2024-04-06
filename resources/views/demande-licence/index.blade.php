@@ -12,20 +12,42 @@
                 <p class="text-gray-700">Fin de la souscription :
                     {{ \Carbon\Carbon::parse($demande_licence->date_fin_licence)->format('d/m/Y') }}</p>
                 <p>Entreprise souhaitant : {{ $demande_licence->user->libelle }}</p>
+                {{-- <div class="flex mt-4 items-end justify-between">
+                    <form method="POST" action="{{ route('demande-licence.destroy', $demande_licence) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="text-white bg-red-600 font-semibold py-0 px-4 rounded">Refuser</button>
+                    </form> --}}
                 <div class="flex mt-4 items-end justify-between">
+                    @if ($demande_licence->type_demande === 'Renouvellement de licence')
+                        <form action="{{ route('mes-licences.renouvelerLicenceClient', ['demandeRenouvellement' => $demande_licence->id]) }}" method="POST">
+                            @csrf
+                            @method('PATCH')
+                            <input type="hidden" name="demandeLicenceId" value="{{ $demande_licence->id }}">
+                            <button type="submit"
+                                class="bg-green-600 hover:bg-green-700 duration-500 text-white font-semibold py-0 px-2 rounded mt-6">
+                                Accepter renouvellement
+                            </button>
+                        </form>
+                    @else
+                        <form action="{{ route('mes-licences.ajouterLicenceClient') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="demandeLicenceId" value="{{ $demande_licence->id }}">
+                        <button type="submit"
+                            class="bg-green-600 hover:bg-green-700 duration-500 text-white font-semibold py-0 px-2 rounded mt-6">Accepter</button>
+                    </form>
+                        </form>
+                    @endif
                     <form method="POST" action="{{ route('demande-licence.destroy', $demande_licence) }}">
                         @csrf
                         @method('DELETE')
                         <button type="submit"
                             class="text-white bg-red-600 font-semibold py-0 px-4 rounded">Refuser</button>
                     </form>
-                    <form action="{{ route('mes-licences.ajouterLicenceClient',  ) }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="demandeLicenceId" value="{{ $demande_licence->id }}">
-                        <button type="submit"
-                            class="bg-green-600 hover:bg-green-700 duration-500 text-white font-semibold py-0 px-2 rounded mt-6">Accepter</button>
-                    </form>
                 </div>
+
+                {{-- </div> --}}
             </div>
         @empty
             <div class="md:col-span-2 text-center">

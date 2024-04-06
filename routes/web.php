@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/licence', LicenceController::class);
     Route::resource('/mes-licences', LicenceChoisieController::class);
     Route::post('/mes-licences/ajouterLicenceClient', [LicenceChoisieController::class, 'ajouterLicenceClient'])->name('mes-licences.ajouterLicenceClient');
+    Route::patch('/mes-licences/renouvelerLicenceClient/{demandeRenouvellement}', [LicenceChoisieController::class, 'renouvelerLicenceClient'])->name('mes-licences.renouvelerLicenceClient');
     Route::resource('/demande-licence', DemandeLicenceController::class);
     Route::post('/demande-licence/renouveler/{licenceChoisie}', [DemandeLicenceController::class, 'renouveler'])->name('demande-licence.renouveler');
     Route::post('/demande-licence/ajouter/{licence}', [DemandeLicenceController::class, 'ajouter'])->name('demande-licence.ajouter');
