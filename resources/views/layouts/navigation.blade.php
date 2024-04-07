@@ -83,11 +83,18 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Licences') }}
+            <x-responsive-nav-link :href="route('mes-licences.index')" :active="request()->routeIs('mes-licences')">
+                {{ __('Mes licences') }}
             </x-responsive-nav-link>
         </div>
 
+        @can('gerer-demandes')
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('demande-licence.index')" :active="request()->routeIs('demande-licence.index')">
+                    {{ __('Demandes') }}
+                </x-responsive-nav-link>
+            </div>
+        @endcan
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">

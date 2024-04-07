@@ -10,10 +10,10 @@
                 <h5 class="text-xl font-semibold mb-2">
                     {{ $licence_choisie->licence->libelle }}</h5>
 
-                <p class="text-gray-700"><strong>Début de la souscription :</strong>
+                <p class="text-gray-700 text-lg"><strong>Début de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($licence_choisie->date_debut)->format('d/m/Y') }}</p>
 
-                <p class="text-gray-700"><strong>Fin de la souscription :</strong>
+                <p class="text-gray-700 text-lg"><strong>Fin de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($licence_choisie->date_fin)->format('d/m/Y') }}</p>
 
                 @if ($licence_choisie->jours_restants <= 0)
@@ -26,7 +26,7 @@
                     </form>
 
                 @elseif ($licence_choisie->jours_restants <= 5)
-                    <p class="text-gray-700"><strong>Jours restants avant expiration de la licence :</strong>
+                    <p class="text-gray-700 text-lg"><strong>Jours restants avant expiration de la licence :</strong>
                         <span class="text-red-500">{{ $licence_choisie->jours_restants }}</span>
                     </p>
                     <p class="text-red-500"><strong>Attention ! La licence expire bientôt.</strong></p>
@@ -38,7 +38,7 @@
                     </form>
 
                 @else
-                    <p class="text-gray-700"><strong>Jours restants avant expiration de la licence :</strong>
+                    <p class="text-gray-700 text-lg"><strong>Jours restants avant expiration de la licence :</strong>
                         {{ $licence_choisie->jours_restants }}</p>
                 @endif
 
