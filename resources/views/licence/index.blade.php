@@ -1,9 +1,18 @@
 <x-app-layout>
-    <p class="mt-10 ml-10">
-        <a class="bg-red-600 hover:bg-red-700 duration-500 text-white text-md font-bold py-1 px-2 rounded"
-            href="{{ route('mes-licences.index') }}">Retour</a>
-    </p>
-    <h1 class="text-4xl font-semibold text-center mt-10 mb-10">Licences disponibles</h1>
+
+    <div class="flex justify-between mt-10">
+        <p class="ml-10">
+            <a class="bg-red-600 hover:bg-red-700 duration-500 text-white font-bold py-1 px-2 rounded"
+                href="{{ route('mes-licences.index') }}">Retour</a>
+        </p>
+        @can('create-licence')
+            <p class="ml-10">
+                <a class="bg-green-600 hover:bg-green-700 duration-500 text-white font-bold py-1 px-2 rounded mr-20"
+                    href="{{ route('licence.create') }}">Créer une licence</a>
+            </p>
+        @endcan
+    </div>
+    <h1 class="text-3xl font-semibold text-center mt-10 mb-10">Licences disponibles</h1>
 
     <section class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center gap-y-10 gap-x-10 mt-10 mb-20">
         @forelse ($licences as $licence)

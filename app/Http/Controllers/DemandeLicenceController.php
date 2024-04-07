@@ -18,7 +18,13 @@ class DemandeLicenceController extends Controller
     public function index()
     {
         $demandes_licences = DemandeLicence::all();
-        return view('demande-licence.index', compact('demandes_licences'));
+
+        if (Auth::user()->can('gerer-demandes')) {
+            return view('demande-licence.index', compact('demandes_licences'));
+        }
+
+        abort(401);
+
     }
 
     /**

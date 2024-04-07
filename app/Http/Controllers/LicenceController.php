@@ -2,11 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\LicenceRepository;
+use App\Http\Requests\LicenceRequest;
 use App\Models\Licence;
+use App\Models\Produit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LicenceController extends Controller
 {
+    protected $licenceRepository;
+    public function __construct(LicenceRepository $licenceRepository)
+    {
+        $this->licenceRepository = $licenceRepository;
+    }
     /**
      * Display a listing of the resource.
      */
@@ -21,15 +30,24 @@ class LicenceController extends Controller
      */
     public function create()
     {
-        //
+        $produits = Produit::all();
+
+        if (Auth::user()->can('create-licence')) {
+            return view('licence.create', compact('produits'));
+        }
+
+        abort(401);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LicenceRequest $request)
     {
-        //
+        $this->licenceRepository->store($request);
+
+        return redirect()->route('licence.index');
+
     }
 
     /**

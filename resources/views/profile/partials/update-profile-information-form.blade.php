@@ -47,7 +47,7 @@
             @endif
         </div>
 
-        <div>
+        {{-- <div>
             <x-input-label for="ville" :value="__('Ville')" />
             <x-text-input id="ville" name="ville" type="text" class="mt-1 block w-full" :value="old('ville', $user->adresse->ville->nom)" required autofocus autocomplete="ville" />
             <x-input-error class="mt-2" :messages="$errors->get('ville')" />
@@ -63,7 +63,7 @@
             <x-input-label for="code_postal" :value="__('Code_postal')" />
             <x-text-input id="code_postal" name="code_postal" type="text" class="mt-1 block w-full" :value="old('code_postal', $user->adresse->ville->code_postal)" required autofocus autocomplete="code_postal" />
             <x-input-error class="mt-2" :messages="$errors->get('code_postal')" />
-        </div>
+        </div> --}}
 
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Sauvegarder') }}</x-primary-button>

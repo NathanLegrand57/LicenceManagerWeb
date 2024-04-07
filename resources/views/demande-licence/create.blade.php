@@ -22,7 +22,7 @@
                 <p class="text-gray-700"><strong>Prix total :</strong> {{ $demandeRenouvellement->licence->prix }}€</p>
 
                 <div class="mt-2 mb-4">
-                    <form action="{{ route('demande-licence.store') }}" method="POST" class="">
+                    <form action="{{ route('demande-licence.store') }}" method="POST">
                         @csrf
                         <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
                         <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence"
@@ -37,7 +37,7 @@
                 <input class="rounded" type="date" name="date_fin_licence" id="date_fin_licence" readonly>
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
+                        class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
                         la
                         demande</button>
                 </div>
@@ -74,7 +74,7 @@
                 <p class="text-gray-700"><strong>Prix total :</strong> {{ $demandeAjout->prix }}€</p>
 
                 <div class="mt-2 mb-4">
-                    <form action="{{ route('demande-licence.store') }}" method="POST" class="">
+                    <form action="{{ route('demande-licence.store') }}" method="POST">
                         @csrf
                         <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
                         <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence"
@@ -90,7 +90,7 @@
 
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
+                        class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
                         la
                         demande</button>
                 </div>
