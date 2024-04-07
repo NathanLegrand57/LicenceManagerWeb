@@ -79,6 +79,7 @@ class LicenceController extends Controller
      */
     public function destroy(Licence $licence)
     {
-        //
+        $licence->delete();
+        return redirect()->route("licence.index");
     }
 }

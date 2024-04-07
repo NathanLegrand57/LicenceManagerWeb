@@ -46,6 +46,18 @@
                     </div>
                 </div>
 
+                @can('delete-licence')
+                    <div class="flex justify-end mt-2">
+                        <form method="POST" action="{{ route('licence.destroy', $licence) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                class="text-white bg-red-600 hover:bg-red-700 duration-500 font-semibold py-0 px-2 rounded">Supprimer</button>
+                        </form>
+                    </div>
+                @endcan
+
+
                 <div class="btn-toolbar">
 
                 </div>
