@@ -1,6 +1,6 @@
 <x-app-layout>
     <p class="flex justify-end mt-10 mr-20">
-        <a class="bg-green-600 hover:bg-green-700 duration-500 text-white text-md font-bold py-1 px-2 rounded"
+        <a class="bg-green-600 hover:bg-green-700 duration-500 text-white font-bold py-1 px-2 rounded"
             href="{{ route('licence.index') }}">Demander une licence</a>
     </p>
     <h1 class="text-3xl font-semibold text-center mb-10">Mes licences</h1>

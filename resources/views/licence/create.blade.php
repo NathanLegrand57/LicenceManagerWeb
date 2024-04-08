@@ -1,6 +1,6 @@
 <x-app-layout>
     <p class="mt-10 ml-10">
-        <a class="bg-red-600 hover:bg-red-700 duration-500 text-white text-md font-bold py-1 px-2 rounded"
+        <a class="bg-red-600 hover:bg-red-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg text-md font-bold py-1 px-2 rounded"
             href="{{ route('licence.index') }}">Retour</a>
     </p>
 
@@ -8,7 +8,7 @@
 
 
     <div class="flex justify-center">
-        <div class="bg-white p-6 mt-6 rounded-lg shadow-md leading-8">
+        <div class="bg-white p-6 mt-6 mb-20 rounded-lg shadow-md leading-8">
             <h2 class="text-center text-xl mb-8">Informations de la licence</h2>
             <form action="{{ route('licence.store') }}" method="POST">
                 @csrf
@@ -44,6 +44,9 @@
                         <option value="{{ $produit->id }}">{{ $produit->libelle }}</option>
                     @endforeach
                 </select>
+                @error('produit')
+                    <p class="text-red-600">{{ $message }}</p>
+                @enderror
 
                 <div class="flex justify-center mt-4">
                     <button type="submit"

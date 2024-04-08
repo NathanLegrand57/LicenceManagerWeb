@@ -11,41 +11,52 @@
             $demandeRenouvellement = session('demandeRenouvellement');
         @endphp
 
-        <h1 class="text-center text-3xl font-semibold">Détails de la demande de renouvellement :</h1>
-        <div class="flex justify-center mt-8">
-            <div class="w-4/12 text-md bg-white p-6 mt-6 rounded-lg shadow-md leading-8">
-                <p class="text-gray-700 text-sm sm:text-md"><strong>Libellé de la licence :</strong>
+        <h1 class="text-center text-xl min-[475px]:text-2xl sm:text-3xl font-semibold">Détails de la demande de
+            renouvellement :</h1>
+        <div class="flex justify-center min-[475px]:mt-8">
+            <div
+                class="bg-white text-sm min-[475px]:text-base sm:text-lg p-6 mt-6 rounded-lg shadow-md leading-6 min-[475px]:leading-8">
+                <p class="text-gray-700"><strong>Libellé de la licence :</strong>
                     {{ $demandeRenouvellement->licence->libelle }}</p>
                 @if ($demandeRenouvellement->duree > 31)
-                    <h5 class="text-gray-700"><strong>Licence annuelle</strong></h5>
+                    <p class="text-gray-700"><strong>Licence annuelle</strong></p>
                 @else
-                    <h5 class="text-gray-700"><strong>Licence mensuelle</strong></h5>
+                    <p class="text-gray-700"><strong>Licence mensuelle</strong></p>
                 @endif
 
-                <p class="text-gray-700 text-sm sm:text-md"><strong>Prix total :</strong>
+                <p class="text-gray-700"><strong>Prix total :</strong>
                     {{ $demandeRenouvellement->licence->prix }}€</p>
 
-                <div class="mt-2 mb-4">
-                    <form action="{{ route('demande-licence.store') }}" method="POST">
-                        @csrf
-                        <label for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
-                        <input class="rounded" type="date" name="date_debut_licence" id="date_debut_licence"
-                            required>
-                </div>
-                @error('date_debut_licence')
-                    <p class="text-red-600">{{ $message }}</p>
-                @enderror
+                <div class="min-[475px]:flex justify-center mt-2 min-[475px]:mt-6 min-[475px]:mb-4 gap-2 sm:gap-10">
+                    <div>
+                        <form action="{{ route('demande-licence.store') }}" method="POST">
+                            @csrf
+                            <p class="text-gray-700 text-center"><strong>Début de la licence :</strong></p>
+                            <div class="flex justify-center">
+                                <input class="rounded text-sm min-[475px]:text-base sm:text-lg" type="date"
+                                    name="date_debut_licence" id="date_debut_licence" required>
+                            </div>
+                    </div>
 
-                <label class="text-gray-700" for="date_debut_licence"><strong>Expiration de la licence
-                        :</strong></label><br />
-                <input class="rounded" type="date" name="date_fin_licence" id="date_fin_licence" readonly>
+                    <div class="mt-2 min-[475px]:mt-0">
+                        <p class="text-gray-700 text-center"><strong>Expiration de la licence :</strong></p>
+                        <div class="flex justify-center">
+                            <input class="rounded text-sm min-[475px]:text-base sm:text-lg" type="date"
+                                name="date_fin_licence" id="date_fin_licence" readonly>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-0 px-4 rounded mt-6 flex justify-center">Confirmer
+                        class="bg-blue-500 hover:bg-blue-700 duration-500 text-white font-bold py-1 px-2 rounded mt-6 flex justify-center">Confirmer
                         la
                         demande</button>
                 </div>
                 </form>
+                @error('date_debut_licence')
+                    <p class="text-red-600 mt-2">{{ $message }}</p>
+                @enderror
             </div>
         </div>
         <script>
@@ -70,38 +81,34 @@
         <h1 class="text-center text-xl min-[475px]:text-2xl sm:text-3xl font-semibold">Détails de la demande d'ajout :
         </h1>
         <div class="flex justify-center min-[475px]:mt-8">
-            <div class="text-md bg-white p-6 mt-6 rounded-lg shadow-md leading-8 sm:leading-10">
-                <p class="text-gray-700 text-sm min-[475px]:text-base sm:text-lg"><strong>Libellé de la licence
-                        :</strong>
+            <div
+                class="text-md bg-white text-sm min-[475px]:text-base sm:text-lg p-6 mt-6 rounded-lg shadow-md leading-6 min-[475px]:leading-8">
+                <p class="text-gray-700"><strong>Libellé de la licence :</strong>
                     {{ $demandeAjout->libelle }}</p>
                 @if ($demandeAjout->duree > 31)
-                    <p class="text-sm min-[475px]:text-base sm:text-lg"><strong>Licence annuelle</strong></p>
+                    <p class="text-gray-700"><strong>Licence annuelle</strong></p>
                 @else
-                    <p class="text-sm min-[475px]:text-base sm:text-lg"><strong>Licence mensuelle</strong></p>
+                    <p class="text-gray-700"><strong>Licence mensuelle</strong></p>
                 @endif
-                <p class="text-gray-700 text-sm min-[475px]:text-base sm:text-lg"><strong>Produit :</strong>
+                <p class="text-gray-700"><strong>Produit :</strong>
                     {{ $demandeAjout->produit }}</p>
-                <p class="text-gray-700 text-sm min-[475px]:text-base sm:text-lg"><strong>Prix total :</strong>
+                <p class="text-gray-700"><strong>Prix total :</strong>
                     {{ $demandeAjout->prix }}€</p>
 
-                <div class="min-[475px]:flex justify-center min-[475px]:mt-6 min-[475px]:mb-4 gap-2 sm:gap-10">
-                    <div class="flex justify-center">
+                <div class="min-[475px]:flex justify-center mt-2 min-[475px]:mt-6 min-[475px]:mb-4 gap-2 sm:gap-10">
+                    <div>
                         <form action="{{ route('demande-licence.store') }}" method="POST">
                             @csrf
-                            <label class="text-sm min-[475px]:text-base sm:text-lg"
-                                for="date_debut_licence"><strong>Début de la licence :</strong></label><br />
-                            <input class="rounded text-sm min-[475px]:text-base sm:text-lg" type="date"
-                                name="date_debut_licence" id="date_debut_licence" required>
+                            <p class="text-gray-700 text-center"><strong>Début de la licence :</strong></p>
+                            <div class="flex justify-center">
+                                <input class="rounded text-sm min-[475px]:text-base sm:text-lg" type="date"
+                                    name="date_debut_licence" id="date_debut_licence" required>
+                            </div>
                     </div>
-                    @error('date_debut_licence')
-                        <p class="text-red-600">{{ $message }}</p>
-                    @enderror
 
-                    <div class="flex justify-center">
-                        <div>
-                            <label class="text-sm min-[475px]:text-base sm:text-lg" class="text-gray-700"
-                                for="date_debut_licence"><strong>Expiration de la licence
-                                    :</strong></label><br />
+                    <div class="mt-2 min-[475px]:mt-0">
+                        <p class="text-gray-700 text-center"><strong>Expiration de la licence :</strong></p>
+                        <div class="flex justify-center">
                             <input class="rounded text-sm min-[475px]:text-base sm:text-lg" type="date"
                                 name="date_fin_licence" id="date_fin_licence" readonly>
                         </div>
@@ -115,6 +122,9 @@
                         demande</button>
                 </div>
                 </form>
+                @error('date_debut_licence')
+                    <p class="text-red-600 mt-2">{{ $message }}</p>
+                @enderror
             </div>
         </div>
         <script>
@@ -133,9 +143,9 @@
     @if (Session::has('success'))
         <div class="flex h-60">
             <div class="text-green-500 text-center m-auto">
-                <p class="text-xl">Votre demande a bien été prise en compte !</p>
-                <p class="text-gray-700 text-sm sm:text-md">Vous allez être redirigé vers la liste de vos licences dans
-                    quelques secondes
+                <p class="text-base min-[475px]:text-lg sm:text-xl">Votre demande a bien été prise en compte !</p>
+                <p class="text-gray-700 text-sm min-[475px]:text-base sm:text-lg">Vous allez être redirigé vers la liste
+                    de vos licences dans quelques secondes
                 </p>
             </div>
         </div>

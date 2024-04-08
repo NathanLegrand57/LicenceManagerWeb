@@ -2,12 +2,12 @@
 
     <div class="flex justify-between mt-10">
         <p class="ml-10">
-            <a class="bg-red-600 hover:bg-red-700 duration-500 text-white font-bold py-1 px-2 rounded"
+            <a class="bg-red-600 hover:bg-red-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg font-bold py-1 px-2 rounded"
                 href="{{ route('mes-licences.index') }}">Retour</a>
         </p>
         @can('create-licence')
             <p class="ml-10">
-                <a class="bg-green-600 hover:bg-green-700 duration-500 text-white font-bold py-1 px-2 rounded mr-20"
+                <a class="bg-green-600 hover:bg-green-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg font-bold py-1 px-2 rounded mr-20"
                     href="{{ route('licence.create') }}">Créer une licence</a>
             </p>
         @endcan
