@@ -1,5 +1,5 @@
 <x-app-layout>
-    <p class="mt-10 ml-10 mb-10">
+    <p class="mt-4 sm:mt-10 ml-10 mb-10">
         <a class="bg-red-600 hover:bg-red-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg font-bold py-1 px-2 rounded"
             href="{{ route('mes-licences.index') }}">Retour</a>
     </p>

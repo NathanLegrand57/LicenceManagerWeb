@@ -6,7 +6,7 @@
     <h1 class="text-xl min-[475px]:text-2xl sm:text-3xl font-semibold text-center mb-0 sm:mb-10 mt-4 sm:mt-5">Mes licences</h1>
     <section class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-2 sm:gap-y-10 gap-x-10 mt-0 sm:mt-10 mb-20">
         @forelse ($licences_choisies as $licence_choisie)
-            <div class="bg-white text-sm min-[475px]:text-base sm:text-lg p-6 mt-6 rounded-lg shadow-md leading-6 min-[475px]:leading-8">
+            <div class="min-w-full bg-white text-sm min-[475px]:text-base sm:text-lg p-6 mt-6 rounded-lg shadow-md leading-6 min-[475px]:leading-8">
                 <h5 class="text-base min-[475px]:text-lg sm:text-xl font-semibold mb-2">
                     {{ $licence_choisie->licence->libelle }}</h5>
 
@@ -22,7 +22,7 @@
                         method="POST">
                         @csrf
                         <button type="submit"
-                            class="bg-blue-500 hover:bg-blue-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg  font-bold py-0 px-2 rounded mt-0 sm:mt-6">Renouveler</button>
+                            class="bg-blue-500 hover:bg-blue-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg font-bold py-0 px-2 rounded mt-0 sm:mt-6">Renouveler</button>
                     </form>
 
                 @elseif ($licence_choisie->jours_restants <= 5)
