@@ -43,15 +43,15 @@
                 @endif
 
                 <!-- Vérifier si une demande de renouvellement est en cours de traitement -->
-                @if (session()->has('licencesAvecRenouvellementEnCours'))
+                {{-- @if (session()->has('licencesAvecRenouvellementEnCours'))
                     <div class="text-red-500">
                         Vous avez déjà une demande de renouvellement en cours pour une de vos licences.
                     </div>
-                @endif
+                @endif --}}
             </div>
         @empty
             <div class="md:col-span-2 text-center">
-                <p class="text-center">
+                <p class="text-center text-sm min-[475px]:text-base sm:text-lg">
                     Aucune licence connue
                 </p>
             </div>

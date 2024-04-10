@@ -12,11 +12,14 @@
             </p>
         @endcan
     </div>
-    <h1 class="text-xl min-[475px]:text-2xl sm:text-3xl font-semibold text-center mb-0 sm:mb-10 mt-4 sm:mt-5">Licences disponibles</h1>
+    <h1 class="text-xl min-[475px]:text-2xl sm:text-3xl font-semibold text-center mb-0 sm:mb-10 mt-4 sm:mt-5">Licences
+        disponibles</h1>
 
-    <section class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center gap-y-2 sm:gap-y-10 gap-x-10 mt-0 sm:mt-10 mb-20">
+    <section
+        class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center gap-y-2 sm:gap-y-10 gap-x-10 mt-0 sm:mt-10 mb-20">
         @forelse ($licences as $licence)
-            <div class="min-w-full bg-white p-6 mt-6 rounded-lg shadow-md text-sm min-[475px]:text-base sm:text-lg leading-6 min-[475px]:leading-8">
+            <div
+                class="min-w-full bg-white p-6 mt-6 rounded-lg shadow-md text-sm min-[475px]:text-base sm:text-lg leading-6 min-[475px]:leading-8">
                 <h5 class="min-[475px]:text-lg sm:text-xl font-semibold">{{ $licence->libelle }}</h5>
                 @if ($licence->duree > 31)
                     <p class="text-gray-700"><strong>Licence annuelle</strong></p>
@@ -28,8 +31,7 @@
                 <div class="flex items-end mt-2">
                     <p>
                         <a class="bg-blue-500 my-auto hover:bg-blue-700 duration-500 text-white text-sm min-[475px]:text-base sm:text-lg font-bold py-1 px-2 rounded"
-                            href="{{ route('licence.index') }}">En savoir plus</a>
-                        {{-- Changer la route en .show --}}
+                            href="{{ route('licence.show', [$licence->id]) }}">En savoir plus</a>
                     </p>
                     <div class="justify-center ml-auto">
                         <p class="text-gray-700 font-semibold flex justify-center">{{ $licence->prix }}

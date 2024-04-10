@@ -55,7 +55,7 @@ class LicenceController extends Controller
      */
     public function show(Licence $licence)
     {
-        //
+        return view('licence.show', compact('licence'));
     }
 
     /**

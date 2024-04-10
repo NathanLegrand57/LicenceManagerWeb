@@ -12,4 +12,9 @@ class Ville extends Model
     public function adresses() {
         return $this->hasMany(Adresse::class);
     }
+
+    protected $fillable = [
+        'nom',
+        'code_postal',
+    ];
 }
