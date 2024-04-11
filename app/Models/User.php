@@ -13,7 +13,7 @@ use Silber\Bouncer\Database\HasRolesAndAbilities;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasFactory, SoftDeletes, HasRolesAndAbilities;
+    use HasApiTokens, HasFactory, Notifiable, HasFactory, HasRolesAndAbilities;
 
     public function licences_choisies() {
         return $this->hasMany(LicenceChoisie::class);
@@ -21,10 +21,6 @@ class User extends Authenticatable
 
     public function demandes() {
         return $this->hasMany(DemandeLicence::class);
-    }
-
-    public function adresse() {
-        return $this->belongsTo(Adresse::class);
     }
 
     public function roles(): BelongsToMany

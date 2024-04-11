@@ -39,7 +39,7 @@
                 </div>
 
                 <label for="produit">Produit</label>
-                <select class="rounded w-full text-sm min-[475px]:text-base sm:text-lg" name="produit" id="produit">
+                <select class="rounded w-full text-sm min-[475px]:text-base sm:text-lg" name="produit_id" id="produit_id">
                     @foreach ($produits as $produit)
                         <option value="{{ $produit->id }}">{{ $produit->libelle }}</option>
                     @endforeach

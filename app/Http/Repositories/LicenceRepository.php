@@ -15,7 +15,7 @@ class LicenceRepository
         $licence->libelle = $data['libelle'];
         $licence->prix = $data['prix'];
         $licence->duree = $data['duree'];
-        $licence->produit_id = $data['produit'];
+        $licence->produit_id = $data['produit_id'];
 
         $licence->save();
     }
