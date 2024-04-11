@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->renameColumn('name', 'libelle');
-            $table->foreignIdFor(Adresse::class, 'adresse_id');
             $table->softDeletes();
         });
     }

@@ -23,8 +23,8 @@ class LicenceController extends Controller
     public function index()
     {
         // $response = Http::get('http://localhost:8000/api/licences');
-        $data = json_decode($response->body(), true);
-        dd($data);
+        // $data = json_decode($response->body(), true);
+        // dd($data);
 
         $licences = Licence::all();
         return view('licence.index', compact('licences'));
