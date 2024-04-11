@@ -21,6 +21,7 @@
             <div
                 class="min-w-full bg-white p-6 mt-6 rounded-lg shadow-md text-sm min-[475px]:text-base sm:text-lg leading-6 min-[475px]:leading-8">
                 <h5 class="min-[475px]:text-lg sm:text-xl font-semibold">{{ $licence->libelle }}</h5>
+                {{-- <h5 class="min-[475px]:text-lg sm:text-xl font-semibold">{{ $licence['libelle'] }}</h5> --}}
                 @if ($licence->duree > 31)
                     <p class="text-gray-700"><strong>Licence annuelle</strong></p>
                 @else
@@ -34,8 +35,7 @@
                             href="{{ route('licence.show', [$licence->id]) }}">En savoir plus</a>
                     </p>
                     <div class="justify-center ml-auto">
-                        <p class="text-gray-700 font-semibold flex justify-center">{{ $licence->prix }}
-                            €</p>
+                        <p class="text-gray-700 font-semibold flex justify-center">{{ $licence->prix }} €</p>
                         <p>
                         <form action="{{ route('demande-licence.ajouter', ['licence' => $licence->id]) }}"
                             method="POST">

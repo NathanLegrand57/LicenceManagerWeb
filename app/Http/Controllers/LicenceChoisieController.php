@@ -29,6 +29,7 @@ class LicenceChoisieController extends Controller
             }
         });
 
+        // return response()->json(LicenceChoisie::all());
         return view('licence-choisie.index', compact('licences_choisies'));
     }
 

@@ -8,6 +8,7 @@ use App\Models\Licence;
 use App\Models\Produit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class LicenceController extends Controller
 {
@@ -21,6 +22,10 @@ class LicenceController extends Controller
      */
     public function index()
     {
+        // $response = Http::get('http://localhost:8000/api/licences');
+        $data = json_decode($response->body(), true);
+        dd($data);
+
         $licences = Licence::all();
         return view('licence.index', compact('licences'));
     }
