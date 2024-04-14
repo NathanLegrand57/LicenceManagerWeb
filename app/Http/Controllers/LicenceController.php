@@ -22,9 +22,6 @@ class LicenceController extends Controller
      */
     public function index()
     {
-        // $response = Http::get('http://localhost:8000/api/licences');
-        // $data = json_decode($response->body(), true);
-        // dd($data);
 
         $licences = Licence::all();
         return view('licence.index', compact('licences'));
@@ -66,18 +63,18 @@ class LicenceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Licence $licence)
-    {
-        //
-    }
+    // public function edit(Licence $licence)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Licence $licence)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, Licence $licence)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.

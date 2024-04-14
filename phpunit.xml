@@ -17,6 +17,20 @@
             <directory>app</directory>
         </include>
     </source>
+
+    <coverage>
+
+        <report>
+            <clover outputFile="clover.xml"/>
+            <crap4j outputFile="crap4j.xml" threshold="50"/>
+            <html outputDirectory="html-coverage" lowUpperBound="50" highLowerBound="90"/>
+            <php outputFile="coverage.php"/>
+            <text outputFile="coverage.txt" showUncoveredFiles="false" showOnlySummary="true"/>
+            <xml outputDirectory="xml-coverage"/>
+        </report>
+
+    </coverage>
+
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>

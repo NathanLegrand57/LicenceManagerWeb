@@ -11,9 +11,6 @@ use Tests\TestCase;
 
 class LicenceTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_licence_index_method_returns_correct_view()
     {
         $user = User::factory()->create();

@@ -44,8 +44,6 @@
                         </form>
                     @endif
                 </div>
-
-                {{-- </div> --}}
             </div>
         @empty
             <div class="md:col-span-2 text-center">

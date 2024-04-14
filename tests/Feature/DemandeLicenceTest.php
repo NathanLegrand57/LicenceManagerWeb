@@ -11,10 +11,6 @@ use Tests\TestCase;
 
 class DemandeLicenceTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
-
     public function test_access_demande_licence_index_for_employe(): void
     {
         $user = User::factory()->create();

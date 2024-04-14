@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2024-04-14 14:39:21</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>73</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>156.93</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>App\Console</package>
+      <className>App\Console\Kernel</className>
+      <methodName>schedule</methodName>
+      <methodSignature>schedule(Illuminate\Console\Scheduling\Schedule $schedule): void</methodSignature>
+      <fullMethod>schedule(Illuminate\Console\Scheduling\Schedule $schedule): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Console</package>
+      <className>App\Console\Kernel</className>
+      <methodName>commands</methodName>
+      <methodSignature>commands(): void</methodSignature>
+      <fullMethod>commands(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Exceptions</package>
+      <className>App\Exceptions\Handler</className>
+      <methodName>register</methodName>
+      <methodSignature>register(): void</methodSignature>
+      <fullMethod>register(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\API</package>
+      <className>App\Http\Controllers\API\LicenceController</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\AuthenticatedSessionController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(): Illuminate\View\View</methodSignature>
+      <fullMethod>create(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\AuthenticatedSessionController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(App\Http\Requests\Auth\LoginRequest $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(App\Http\Requests\Auth\LoginRequest $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\AuthenticatedSessionController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>destroy(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\ConfirmablePasswordController</className>
+      <methodName>show</methodName>
+      <methodSignature>show(): Illuminate\View\View</methodSignature>
+      <fullMethod>show(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\ConfirmablePasswordController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\EmailVerificationNotificationController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\EmailVerificationPromptController</className>
+      <methodName>__invoke</methodName>
+      <methodSignature>__invoke(Illuminate\Http\Request $request): \Illuminate\Http\RedirectResponse|\Illuminate\View\View</methodSignature>
+      <fullMethod>__invoke(Illuminate\Http\Request $request): \Illuminate\Http\RedirectResponse|\Illuminate\View\View</fullMethod>
+      <crap>2.15</crap>
+      <complexity>2</complexity>
+      <coverage>66.67</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\NewPasswordController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(Illuminate\Http\Request $request): Illuminate\View\View</methodSignature>
+      <fullMethod>create(Illuminate\Http\Request $request): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\NewPasswordController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\PasswordController</className>
+      <methodName>update</methodName>
+      <methodSignature>update(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>update(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\PasswordResetLinkController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(): Illuminate\View\View</methodSignature>
+      <fullMethod>create(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\PasswordResetLinkController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\RegisteredUserController</className>
+      <methodName>create</methodName>
+      <methodSignature>create(): Illuminate\View\View</methodSignature>
+      <fullMethod>create(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\RegisteredUserController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Auth</package>
+      <className>App\Http\Controllers\Auth\VerifyEmailController</className>
+      <methodName>__invoke</methodName>
+      <methodSignature>__invoke(Illuminate\Foundation\Auth\EmailVerificationRequest $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>__invoke(Illuminate\Foundation\Auth\EmailVerificationRequest $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>3.07</crap>
+      <complexity>3</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository)</methodSignature>
+      <fullMethod>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>create</methodName>
+      <methodSignature>create()</methodSignature>
+      <fullMethod>create()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>renouveler</methodName>
+      <methodSignature>renouveler(App\Models\LicenceChoisie $licenceChoisie)</methodSignature>
+      <fullMethod>renouveler(App\Models\LicenceChoisie $licenceChoisie)</fullMethod>
+      <crap>20</crap>
+      <complexity>4</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>ajouter</methodName>
+      <methodSignature>ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)</methodSignature>
+      <fullMethod>ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Illuminate\Http\Request $request)</methodSignature>
+      <fullMethod>store(Illuminate\Http\Request $request)</fullMethod>
+      <crap>9.03</crap>
+      <complexity>3</complexity>
+      <coverage>12.5</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\DemandeLicenceController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(App\Models\DemandeLicence $demandeLicence)</methodSignature>
+      <fullMethod>destroy(App\Models\DemandeLicence $demandeLicence)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceChoisieController</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>2.5</crap>
+      <complexity>2</complexity>
+      <coverage>50</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceChoisieController</className>
+      <methodName>ajouterLicenceClient</methodName>
+      <methodSignature>ajouterLicenceClient(Illuminate\Http\Request $request)</methodSignature>
+      <fullMethod>ajouterLicenceClient(Illuminate\Http\Request $request)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceChoisieController</className>
+      <methodName>renouvelerLicenceClient</methodName>
+      <methodSignature>renouvelerLicenceClient(Illuminate\Http\Request $request)</methodSignature>
+      <fullMethod>renouvelerLicenceClient(Illuminate\Http\Request $request)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(App\Http\Repositories\LicenceRepository $licenceRepository)</methodSignature>
+      <fullMethod>__construct(App\Http\Repositories\LicenceRepository $licenceRepository)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>create</methodName>
+      <methodSignature>create()</methodSignature>
+      <fullMethod>create()</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(App\Http\Requests\LicenceRequest $request)</methodSignature>
+      <fullMethod>store(App\Http\Requests\LicenceRequest $request)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>show</methodName>
+      <methodSignature>show(App\Models\Licence $licence)</methodSignature>
+      <fullMethod>show(App\Models\Licence $licence)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\LicenceController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(App\Models\Licence $licence)</methodSignature>
+      <fullMethod>destroy(App\Models\Licence $licence)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\ProfileController</className>
+      <methodName>edit</methodName>
+      <methodSignature>edit(Illuminate\Http\Request $request): Illuminate\View\View</methodSignature>
+      <fullMethod>edit(Illuminate\Http\Request $request): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\ProfileController</className>
+      <methodName>update</methodName>
+      <methodSignature>update(App\Http\Requests\ProfileUpdateRequest $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>update(App\Http\Requests\ProfileUpdateRequest $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers</package>
+      <className>App\Http\Controllers\ProfileController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</methodSignature>
+      <fullMethod>destroy(Illuminate\Http\Request $request): Illuminate\Http\RedirectResponse</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>App\Http\Middleware\Authenticate</className>
+      <methodName>redirectTo</methodName>
+      <methodSignature>redirectTo(Illuminate\Http\Request $request): ?string</methodSignature>
+      <fullMethod>redirectTo(Illuminate\Http\Request $request): ?string</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>App\Http\Middleware\RedirectIfAuthenticated</className>
+      <methodName>handle</methodName>
+      <methodSignature>handle(Illuminate\Http\Request $request, Closure $next, string $guards): Symfony\Component\HttpFoundation\Response</methodSignature>
+      <fullMethod>handle(Illuminate\Http\Request $request, Closure $next, string $guards): Symfony\Component\HttpFoundation\Response</fullMethod>
+      <crap>4.13</crap>
+      <complexity>4</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>App\Http\Middleware\TrustHosts</className>
+      <methodName>hosts</methodName>
+      <methodSignature>hosts(): array</methodSignature>
+      <fullMethod>hosts(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Repositories</package>
+      <className>App\Http\Repositories\DemandeRenouvellementRepository</className>
+      <methodName>store</methodName>
+      <methodSignature>store($request, $demandeRenouvellement)</methodSignature>
+      <fullMethod>store($request, $demandeRenouvellement)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Repositories</package>
+      <className>App\Http\Repositories\LicenceRepository</className>
+      <methodName>store</methodName>
+      <methodSignature>store($request)</methodSignature>
+      <fullMethod>store($request)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests\Auth</package>
+      <className>App\Http\Requests\Auth\LoginRequest</className>
+      <methodName>authorize</methodName>
+      <methodSignature>authorize(): bool</methodSignature>
+      <fullMethod>authorize(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests\Auth</package>
+      <className>App\Http\Requests\Auth\LoginRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests\Auth</package>
+      <className>App\Http\Requests\Auth\LoginRequest</className>
+      <methodName>authenticate</methodName>
+      <methodSignature>authenticate(): void</methodSignature>
+      <fullMethod>authenticate(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests\Auth</package>
+      <className>App\Http\Requests\Auth\LoginRequest</className>
+      <methodName>ensureIsNotRateLimited</methodName>
+      <methodSignature>ensureIsNotRateLimited(): void</methodSignature>
+      <fullMethod>ensureIsNotRateLimited(): void</fullMethod>
+      <crap>4.05</crap>
+      <complexity>2</complexity>
+      <coverage>20</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests\Auth</package>
+      <className>App\Http\Requests\Auth\LoginRequest</className>
+      <methodName>throttleKey</methodName>
+      <methodSignature>throttleKey(): string</methodSignature>
+      <fullMethod>throttleKey(): string</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests</package>
+      <className>App\Http\Requests\LicenceRequest</className>
+      <methodName>authorize</methodName>
+      <methodSignature>authorize(): bool</methodSignature>
+      <fullMethod>authorize(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests</package>
+      <className>App\Http\Requests\LicenceRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Requests</package>
+      <className>App\Http\Requests\ProfileUpdateRequest</className>
+      <methodName>rules</methodName>
+      <methodSignature>rules(): array</methodSignature>
+      <fullMethod>rules(): array</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\DemandeLicence</className>
+      <methodName>user</methodName>
+      <methodSignature>user()</methodSignature>
+      <fullMethod>user()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\DemandeLicence</className>
+      <methodName>licence</methodName>
+      <methodSignature>licence()</methodSignature>
+      <fullMethod>licence()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\DemandeLicence</className>
+      <methodName>licencechoisie</methodName>
+      <methodSignature>licencechoisie()</methodSignature>
+      <fullMethod>licencechoisie()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\Licence</className>
+      <methodName>produit</methodName>
+      <methodSignature>produit()</methodSignature>
+      <fullMethod>produit()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\Licence</className>
+      <methodName>licences_choisies</methodName>
+      <methodSignature>licences_choisies()</methodSignature>
+      <fullMethod>licences_choisies()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\Licence</className>
+      <methodName>users</methodName>
+      <methodSignature>users(): Illuminate\Database\Eloquent\Relations\BelongsToMany</methodSignature>
+      <fullMethod>users(): Illuminate\Database\Eloquent\Relations\BelongsToMany</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\LicenceChoisie</className>
+      <methodName>licence</methodName>
+      <methodSignature>licence()</methodSignature>
+      <fullMethod>licence()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\LicenceChoisie</className>
+      <methodName>user</methodName>
+      <methodSignature>user()</methodSignature>
+      <fullMethod>user()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\LicenceChoisie</className>
+      <methodName>demandes_licences</methodName>
+      <methodSignature>demandes_licences()</methodSignature>
+      <fullMethod>demandes_licences()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\Produit</className>
+      <methodName>licences</methodName>
+      <methodSignature>licences()</methodSignature>
+      <fullMethod>licences()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\User</className>
+      <methodName>licences_choisies</methodName>
+      <methodSignature>licences_choisies()</methodSignature>
+      <fullMethod>licences_choisies()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\User</className>
+      <methodName>demandes</methodName>
+      <methodSignature>demandes()</methodSignature>
+      <fullMethod>demandes()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models</package>
+      <className>App\Models\User</className>
+      <methodName>roles</methodName>
+      <methodSignature>roles(): Illuminate\Database\Eloquent\Relations\BelongsToMany</methodSignature>
+      <fullMethod>roles(): Illuminate\Database\Eloquent\Relations\BelongsToMany</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\AppServiceProvider</className>
+      <methodName>register</methodName>
+      <methodSignature>register(): void</methodSignature>
+      <fullMethod>register(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\AppServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\AuthServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\BroadcastServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\EventServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\EventServiceProvider</className>
+      <methodName>shouldDiscoverEvents</methodName>
+      <methodSignature>shouldDiscoverEvents(): bool</methodSignature>
+      <fullMethod>shouldDiscoverEvents(): bool</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>App\Providers\RouteServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(): void</methodSignature>
+      <fullMethod>boot(): void</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\View\Components</package>
+      <className>App\View\Components\AppLayout</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): Illuminate\View\View</methodSignature>
+      <fullMethod>render(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\View\Components</package>
+      <className>App\View\Components\GuestLayout</className>
+      <methodName>render</methodName>
+      <methodSignature>render(): Illuminate\View\View</methodSignature>
+      <fullMethod>render(): Illuminate\View\View</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>

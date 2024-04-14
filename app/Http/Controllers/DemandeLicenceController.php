@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\DemandeRenouvellementRepository;
+use App\Http\Repositories\DemandeAjoutRepository;
 use App\Models\DemandeLicence;
 use App\Models\Licence;
 use App\Models\LicenceChoisie;
@@ -15,6 +17,13 @@ class DemandeLicenceController extends Controller
     /**
      * Display a listing of the resource.
      */
+    protected $demandeRenouvellementRepository, $demandeAjoutRepository;
+    public function __construct(DemandeRenouvellementRepository $demandeRenouvellementRepository, DemandeAjoutRepository $demandeAjoutRepository)
+    {
+        $this->demandeRenouvellementRepository = $demandeRenouvellementRepository;
+        $this->demandeAjoutRepository = $demandeAjoutRepository;
+    }
+
     public function index()
     {
         $demandes_licences = DemandeLicence::all();
@@ -128,34 +137,13 @@ class DemandeLicenceController extends Controller
                 'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeRenouvellement->licence->duree . ' jours à partir de la date actuelle.',
             ]);
 
-            // Créer un nouvel objet DemandeLicence
-            $nouvelleDemande = new DemandeLicence();
-
-            // Assigner les valeurs de la demande de renouvellement à l'objet DemandeLicence
-
-            $nouvelleDemande->type_demande = $demandeRenouvellement->type_demande;
-            // $nouvelleDemande->date_debut_licence = Carbon::parse($demandeRenouvellement->date_debut_licence);
-            // $nouvelleDemande->date_fin_licence = Carbon::parse($demandeRenouvellement->date_fin_licence);
-
-            $nouvelleDemande->date_debut_licence = Carbon::parse($request->input('date_debut_licence'));
-            $dateDebutLicence = $nouvelleDemande->date_debut_licence;
-
-            // Calculer la date de fin en ajoutant la durée de la licence à la date de début
-            $dateFinLicence = $dateDebutLicence->copy()->addDays($demandeRenouvellement->licence->duree);
-
-            $nouvelleDemande->date_fin_licence = $dateFinLicence;
-
-            $nouvelleDemande->licencechoisie_id = $demandeRenouvellement->licencechoisie_id;
-            $nouvelleDemande->licence_id = $demandeRenouvellement->licence_id;
-            $nouvelleDemande->user_id = $demandeRenouvellement->user_id;
-
-            // Enregistrer la nouvelle demande dans la base de données
-            $nouvelleDemande->save();
+            $this->demandeRenouvellementRepository->store($request, $demandeRenouvellement);
 
             Session::flash('success');
 
             // Supprimer la demande de renouvellement de la session après l'enregistrement
             session()->forget('demandeRenouvellement');
+
 
             // Rediriger l'utilisateur vers la page du formulaire de renouvellement
             return redirect()->route('demande-licence.create');
@@ -174,26 +162,7 @@ class DemandeLicenceController extends Controller
                 'date_debut_licence.before_or_equal' => 'La date de début ne peut être supérieure à ' . $demandeAjout->licence->duree . ' jours à partir de la date actuelle.',
             ]);
 
-            // Créer un nouvel objet DemandeLicence
-            $nouvelleDemande = new DemandeLicence();
-
-            // Assigner les valeurs de la demande d'ajout à l'objet DemandeLicence
-            $nouvelleDemande->type_demande = $demandeAjout->type_demande;
-
-            $nouvelleDemande->date_debut_licence = Carbon::parse($request->input('date_debut_licence'));
-            $dateDebutLicence = $nouvelleDemande->date_debut_licence;
-
-            // Calculer la date de fin en ajoutant la durée de la licence à la date de début
-            $dateFinLicence = $dateDebutLicence->copy()->addDays($demandeAjout->licence->duree);
-
-            $nouvelleDemande->date_fin_licence = $dateFinLicence;
-
-
-            $nouvelleDemande->licence_id = $demandeAjout->licence_id;
-            $nouvelleDemande->user_id = $demandeAjout->user_id;
-
-            // Enregistrer la nouvelle demande dans la base de données
-            $nouvelleDemande->save();
+            $this->demandeAjoutRepository->store($request, $demandeAjout);
 
             Session::flash('success');
 
@@ -207,26 +176,26 @@ class DemandeLicenceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DemandeLicence $demandeLicence)
-    {
-        //
-    }
+    // public function show(DemandeLicence $demandeLicence)
+    // {
+    //     //
+    // }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(DemandeLicence $demandeLicence)
-    {
-        //
-    }
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  */
+    // public function edit(DemandeLicence $demandeLicence)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, DemandeLicence $demandeLicence)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, DemandeLicence $demandeLicence)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.

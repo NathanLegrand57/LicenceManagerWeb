@@ -14,41 +14,56 @@ class LicenceController extends Controller
     public function index()
     {
 
-    $licences = Licence::all();
+        $licences = Licence::all();
 
-    // On retourne les informations des utilisateurs en JSON
-    return response()->json($licences);
+        // Création d'un tableau pour stocker les informations de chaque licence
+        $informationsLicences = [];
+
+        foreach ($licences as $licence) {
+            $informationsLicence = new Licence();
+            $informationsLicence->id = $licence->id;
+            $informationsLicence->libelle = $licence->libelle;
+            $informationsLicence->duree = $licence->duree;
+            $informationsLicence->produit_id = $licence->produit_id;
+            $informationsLicence->libelleProduit = $licence->produit->libelle;
+
+            // Ajout de l'objet contenant les informations de la licence au tableau
+            $informationsLicences[] = $informationsLicence;
+        }
+
+        // On retourne les informations des licences en JSON
+        return response()->json($informationsLicences);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function store(Request $request)
+    // {
+    //     //
+    // }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
-    }
+    // public function show(string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
+    // /**
+    //  * Update the specified resource in storage.
+    //  */
+    // public function update(Request $request, string $id)
+    // {
+    //     //
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
+    // /**
+    //  * Remove the specified resource from storage.
+    //  */
+    // public function destroy(string $id)
+    // {
+    //     //
+    // }
 }

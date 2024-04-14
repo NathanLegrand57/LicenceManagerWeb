@@ -57,15 +57,10 @@
                         </form>
                     </div>
                 @endcan
-
-
-                <div class="btn-toolbar">
-
-                </div>
             </div>
         @empty
             <p class="ms-3">
-                Aucun produit connu
+                Aucune licence connue
             </p>
         @endforelse
     </section>

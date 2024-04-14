@@ -59,6 +59,9 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Calcul dynamique de la date de fin de la licence --}}
+
         <script>
             document.getElementById('date_debut_licence').addEventListener('change', function() {
                 var dateDebut = new Date(this.value);
@@ -127,6 +130,9 @@
                 @enderror
             </div>
         </div>
+
+        {{-- Calcul dynamique de la date de fin de la licence --}}
+
         <script>
             document.getElementById('date_debut_licence').addEventListener('change', function() {
                 var dateDebut = new Date(this.value);
@@ -139,6 +145,8 @@
             });
         </script>
     @endif
+
+        {{-- Message de succès qui redirige par la suite vers la page des licences choisies --}}
 
     @if (Session::has('success'))
         <div class="flex h-60">
