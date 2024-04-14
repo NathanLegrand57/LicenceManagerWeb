@@ -9,7 +9,7 @@
             <div class="min-w-full bg-white text-sm min-[475px]:text-base sm:text-lg p-6 mt-6 rounded-lg shadow-md leading-6 min-[475px]:leading-8">
                 <h5 class="text-base min-[475px]:text-lg sm:text-xl font-semibold mb-2">
                     {{ $licence_choisie->licence->libelle }}</h5>
-                    
+
                 <p class="text-gray-700"><strong>Début de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($licence_choisie->date_debut)->format('d/m/Y') }}</p>
 

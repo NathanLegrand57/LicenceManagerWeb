@@ -40,13 +40,13 @@ class DemandeLicenceController extends Controller
 
     public function renouveler(LicenceChoisie $licenceChoisie)
     {
-        $demandeExistante = DemandeLicence::where('licence_id', $licenceChoisie->licence_id)
+        $demandeExistante = DemandeLicence::where('licencechoisie_id', $licenceChoisie->id)
             ->where('user_id', Auth::id())
             ->exists();
 
         // Si une demande de renouvellement existe déjà, retourner un message d'erreur
         if ($demandeExistante) {
-            return redirect()->back()->with('error', 'Vous avez déjà une demande de renouvellement en cours pour cette licence.');
+            return redirect()->back()->with(session('DemandeEnCours'));
         } else {
 
             // Sinon créer une nouvelle demande de renouvellement
@@ -63,18 +63,6 @@ class DemandeLicenceController extends Controller
             $demandeRenouvellement->date_debut_licence = Carbon::parse($licenceChoisie->date_debut);
 
             $dateFin = Carbon::parse($licenceChoisie->date_fin);
-
-            // // Vérifier si la date de fin est passée (la licence est expirée)
-            // if ($dateFin->isPast()) {
-            //     // Si la licence est expirée, il faut calculer la nouvelle date de fin à partir de la date actuelle
-            //     $nouvelleDateFin = Carbon::now()->addDays($licenceChoisie->licence->duree);
-            // } else {
-            //     // Si la licence n'est pas expirée, il faut calculer la nouvelle date de fin à partir de l'ancienne date de fin
-            //     $nouvelleDateFin = $dateFin->addDays($licenceChoisie->licence->duree);
-            // }
-
-            // Assigner la nouvelle date de fin à la demande de renouvellement
-            // $demandeRenouvellement->date_fin_licence = $nouvelleDateFin;
 
             // Vérifier si une demande d'ajout est en cours et la supprimer si c'est le cas
             if (session()->has('demandeRenouvellement')) {

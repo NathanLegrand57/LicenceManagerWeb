@@ -9,12 +9,12 @@
                 class="bg-white p-6 mt-6 rounded-lg shadow-md text-sm min-[475px]:text-base sm:text-lg leading-6 min-[475px]:leading-8">
                 <h5 class="min-[475px]:text-lg sm:text-xl font-semibold mb-2">
                     {{ $demande_licence->type_demande }}</h5>
-                <p>Licence demandée : {{ $demande_licence->licence->libelle }}</p>
-                <p class="text-gray-700">Début de la souscription :
+                <p><strong>Licence demandée :</strong> {{ $demande_licence->licence->libelle }}</p>
+                <p class="text-gray-700"><strong>Début de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($demande_licence->date_debut_licence)->format('d/m/Y') }}</p>
-                <p class="text-gray-700">Fin de la souscription :
+                <p class="text-gray-700"><strong>Fin de la souscription :</strong>
                     {{ \Carbon\Carbon::parse($demande_licence->date_fin_licence)->format('d/m/Y') }}</p>
-                <p>Entreprise souhaitant : {{ $demande_licence->user->libelle }}</p>
+                <p><strong>Entreprise souhaitant :</strong> {{ $demande_licence->user->libelle }}</p>
                 <div class="flex mt-4 items-end justify-between">
                     <form method="POST" action="{{ route('demande-licence.destroy', $demande_licence) }}">
                         @csrf
