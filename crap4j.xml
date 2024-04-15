@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2024-04-14 14:39:21</timestamp>
+  <timestamp>2024-04-15 17:19:19</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>73</methodCount>
+    <methodCount>74</methodCount>
     <crapMethodCount>0</crapMethodCount>
     <crapLoad>0</crapLoad>
-    <totalCrap>156.93</totalCrap>
+    <totalCrap>135.97</totalCrap>
     <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
@@ -224,8 +224,8 @@
       <package>App\Http\Controllers</package>
       <className>App\Http\Controllers\DemandeLicenceController</className>
       <methodName>__construct</methodName>
-      <methodSignature>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository)</methodSignature>
-      <fullMethod>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository)</fullMethod>
+      <methodSignature>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository, App\Http\Repositories\DemandeAjoutRepository $demandeAjoutRepository)</methodSignature>
+      <fullMethod>__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository, App\Http\Repositories\DemandeAjoutRepository $demandeAjoutRepository)</fullMethod>
       <crap>1</crap>
       <complexity>1</complexity>
       <coverage>100</coverage>
@@ -259,9 +259,9 @@
       <methodName>renouveler</methodName>
       <methodSignature>renouveler(App\Models\LicenceChoisie $licenceChoisie)</methodSignature>
       <fullMethod>renouveler(App\Models\LicenceChoisie $licenceChoisie)</fullMethod>
-      <crap>20</crap>
+      <crap>4.05</crap>
       <complexity>4</complexity>
-      <coverage>0</coverage>
+      <coverage>85</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -270,9 +270,9 @@
       <methodName>ajouter</methodName>
       <methodSignature>ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)</methodSignature>
       <fullMethod>ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)</fullMethod>
-      <crap>12</crap>
+      <crap>3.02</crap>
       <complexity>3</complexity>
-      <coverage>0</coverage>
+      <coverage>86.67</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -281,9 +281,9 @@
       <methodName>store</methodName>
       <methodSignature>store(Illuminate\Http\Request $request)</methodSignature>
       <fullMethod>store(Illuminate\Http\Request $request)</fullMethod>
-      <crap>9.03</crap>
+      <crap>12</crap>
       <complexity>3</complexity>
-      <coverage>12.5</coverage>
+      <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -457,6 +457,17 @@
       <methodName>hosts</methodName>
       <methodSignature>hosts(): array</methodSignature>
       <fullMethod>hosts(): array</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Repositories</package>
+      <className>App\Http\Repositories\DemandeAjoutRepository</className>
+      <methodName>store</methodName>
+      <methodSignature>store($request, $demandeAjout)</methodSignature>
+      <fullMethod>store($request, $demandeAjout)</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -644,9 +655,9 @@
       <methodName>licence</methodName>
       <methodSignature>licence()</methodSignature>
       <fullMethod>licence()</fullMethod>
-      <crap>2</crap>
+      <crap>1</crap>
       <complexity>1</complexity>
-      <coverage>0</coverage>
+      <coverage>100</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>

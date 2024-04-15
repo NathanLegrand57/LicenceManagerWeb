@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Sun Apr 14 14:39:22 UTC 2024" phpunit="10.5.15" coverage="10.1.14">
+  <build time="Mon Apr 15 17:19:19 UTC 2024" phpunit="10.5.15" coverage="10.1.14">
     <runtime name="PHP" version="8.1.13" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.1"/>
   </build>
@@ -28,13 +28,13 @@
       <test name="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin" size="unknown" status="success"/>
       <test name="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities" size="unknown" status="success"/>
       <test name="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view" size="unknown" status="success"/>
-      <test name="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande" size="unknown" status="success"/>
+      <test name="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence" size="unknown" status="success"/>
+      <test name="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence" size="unknown" status="success"/>
       <test name="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities" size="unknown" status="success"/>
       <test name="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed" size="unknown" status="success"/>
       <test name="Tests\Feature\ExampleTest::test_the_application_returns_a_successful_response" size="unknown" status="success"/>
       <test name="Tests\Feature\LicenceAPITest::test_licence_API_index_method_returns_correct_view" size="unknown" status="success"/>
       <test name="Tests\Feature\LicenceChoisieTest::test_licencechoisie_index_method_returns_correct_view" size="unknown" status="success"/>
-      <test name="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande" size="unknown" status="success"/>
       <test name="Tests\Feature\LicenceTest::test_licence_index_method_returns_correct_view" size="unknown" status="success"/>
       <test name="Tests\Feature\LicenceTest::test_licence_show_for_user" size="unknown" status="success"/>
       <test name="Tests\Feature\LicenceTest::test_dont_access_licence_create_for_user_without_abilities" size="unknown" status="success"/>
@@ -50,10 +50,10 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="1824" comments="417" code="1407" executable="325" executed="195" percent="60.00"/>
-        <methods count="73" tested="47" percent="64.38"/>
+        <lines total="1843" comments="417" code="1426" executable="327" executed="223" percent="68.20"/>
+        <methods count="74" tested="48" percent="64.86"/>
         <functions count="0" tested="0" percent="0"/>
-        <classes count="36" tested="19" percent="52.78"/>
+        <classes count="37" tested="19" percent="51.35"/>
         <traits count="0" tested="0" percent="0"/>
       </totals>
       <directory name="Console">
@@ -94,15 +94,15 @@
       </directory>
       <directory name="Http">
         <totals>
-          <lines total="1412" comments="336" code="1076" executable="288" executed="171" percent="59.38"/>
-          <methods count="48" tested="34" percent="70.83"/>
+          <lines total="1431" comments="336" code="1095" executable="290" executed="198" percent="68.28"/>
+          <methods count="49" tested="34" percent="69.39"/>
           <functions count="0" tested="0" percent="0"/>
-          <classes count="22" tested="12" percent="54.55"/>
+          <classes count="23" tested="12" percent="52.17"/>
           <traits count="0" tested="0" percent="0"/>
         </totals>
         <directory name="Controllers">
           <totals>
-            <lines total="946" comments="229" code="717" executable="229" executed="135" percent="58.95"/>
+            <lines total="929" comments="225" code="704" executable="222" executed="162" percent="72.97"/>
             <methods count="35" tested="26" percent="74.29"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="14" tested="9" percent="64.29"/>
@@ -227,7 +227,7 @@
           </file>
           <file name="DemandeLicenceController.php" href="Http/Controllers/DemandeLicenceController.php.xml">
             <totals>
-              <lines total="226" comments="48" code="178" executable="76" executed="13" percent="17.11"/>
+              <lines total="209" comments="44" code="165" executable="69" executed="40" percent="57.97"/>
               <methods count="7" tested="4" percent="57.14"/>
               <functions count="0" tested="0" percent="0"/>
               <classes count="1" tested="0" percent="0.00"/>
@@ -354,12 +354,21 @@
         </directory>
         <directory name="Repositories">
           <totals>
-            <lines total="61" comments="4" code="57" executable="17" executed="7" percent="41.18"/>
-            <methods count="2" tested="1" percent="50.00"/>
+            <lines total="97" comments="8" code="89" executable="26" executed="7" percent="26.92"/>
+            <methods count="3" tested="1" percent="33.33"/>
             <functions count="0" tested="0" percent="0"/>
-            <classes count="2" tested="1" percent="50.00"/>
+            <classes count="3" tested="1" percent="33.33"/>
             <traits count="0" tested="0" percent="0"/>
           </totals>
+          <file name="DemandeAjoutRepository.php" href="Http/Repositories/DemandeAjoutRepository.php.xml">
+            <totals>
+              <lines total="36" comments="4" code="32" executable="9" executed="0" percent="0.00"/>
+              <methods count="1" tested="0" percent="0.00"/>
+              <functions count="0" tested="0" percent="0"/>
+              <classes count="1" tested="0" percent="0.00"/>
+              <traits count="0" tested="0" percent="0"/>
+            </totals>
+          </file>
           <file name="DemandeRenouvellementRepository.php" href="Http/Repositories/DemandeRenouvellementRepository.php.xml">
             <totals>
               <lines total="38" comments="4" code="34" executable="10" executed="0" percent="0.00"/>
@@ -436,8 +445,8 @@
       </directory>
       <directory name="Models">
         <totals>
-          <lines total="165" comments="16" code="149" executable="13" executed="3" percent="23.08"/>
-          <methods count="13" tested="3" percent="23.08"/>
+          <lines total="165" comments="16" code="149" executable="13" executed="4" percent="30.77"/>
+          <methods count="13" tested="4" percent="30.77"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="5" tested="0" percent="0.00"/>
           <traits count="0" tested="0" percent="0"/>
@@ -462,8 +471,8 @@
         </file>
         <file name="LicenceChoisie.php" href="Models/LicenceChoisie.php.xml">
           <totals>
-            <lines total="31" comments="0" code="31" executable="3" executed="0" percent="0.00"/>
-            <methods count="3" tested="0" percent="0.00"/>
+            <lines total="31" comments="0" code="31" executable="3" executed="1" percent="33.33"/>
+            <methods count="3" tested="1" percent="33.33"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="1" tested="0" percent="0.00"/>
             <traits count="0" tested="0" percent="0"/>

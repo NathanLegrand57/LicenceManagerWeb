@@ -19,7 +19,7 @@ class LicenceAPITest extends TestCase
 
         $response = $this
             ->actingAs($user)
-            ->get('api/licences');
+            ->get('/api/licences');
 
         $response->assertStatus(200);
         $response->assertOk();

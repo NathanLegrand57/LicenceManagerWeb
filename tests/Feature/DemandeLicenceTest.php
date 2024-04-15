@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use App\Models\DemandeLicence;
+use App\Models\Licence;
+use App\Models\LicenceChoisie;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -62,37 +64,45 @@ class DemandeLicenceTest extends TestCase
         $response->assertViewIs('demande-licence.create');
     }
 
-    public function test_user_can_create_demande(): void
+    public function test_user_can_see_form_demande_ajout_licence(): void
     {
         $user = User::factory()->create();
         Bouncer::refresh();
 
+        $licence = Licence::factory()->create();
+
         $response = $this;
         $this->actingAs($user);
-        $response = $this->post('/demande-licence', [
-            'type_demande' => 'demandeTest',
-            'date_debut_licence' => '13/04/2024',
-            'date_fin_licence' => '13/05-2024',
-            'licencechoisie_id' => '1',
-            'licence_id' => '1',
-            'user_id' => '1',
-        ]);
+        $response = $this->post("/demande-licence/ajouter/{$licence->id}", []);
 
         $response->assertSessionHasNoErrors();
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
+
+    public function test_user_can_see_form_create_demande_renouvellement_licence(): void
+    {
+        $user = User::factory()->create();
+        Bouncer::refresh();
+
+        $licenceChoisie = LicenceChoisie::factory()->create();
+
+        $response = $this;
+        $this->actingAs($user);
+        $response = $this->post("/demande-licence/renouveler/{$licenceChoisie->id}", []);
+
+        $response->assertSessionHasNoErrors();
+        $response->assertStatus(302);
+    }
+
 
     public function test_access_demande_licence_cant_be_destroyed_for_user_without_abilities(): void
     {
 
-        // Création d'un utilisateur avec les rôles nécessaires
         $user = User::factory()->create();
         Bouncer::refresh();
 
-        // Création d'une licence
         $demandelicence = DemandeLicence::factory()->create();
 
-        // Requête DELETE pour détruire la demande-licence
         $response = $this
             ->actingAs($user)
             ->delete("/demande-licence/{$demandelicence->id}");
@@ -103,19 +113,16 @@ class DemandeLicenceTest extends TestCase
     public function test_demande_licence_can_be_destroyed(): void
     {
 
-        // Création d'un utilisateur avec les rôles nécessaires
         $user = User::factory()->create();
         Bouncer::assign('admin')->to($user);
         Bouncer::allow('admin')->to('gerer-demandes');
         Bouncer::refresh();
 
-        // Création d'une licence
         $demandelicence = DemandeLicence::factory()->create();
 
         // Vérification que la demande de licence existe avant la destruction
         $this->assertDatabaseHas('licences', ['id' => $demandelicence->id]);
 
-        // Requête DELETE pour détruire la demande de licence
         $response = $this
             ->actingAs($user)
             ->delete("/demande-licence/{$demandelicence->id}");

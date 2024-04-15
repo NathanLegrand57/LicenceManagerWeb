@@ -2,81 +2,163 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="DemandeLicenceController.php" path="\Http\Controllers">
     <totals>
-      <lines total="226" comments="48" code="178" executable="76" executed="13" percent="17.11"/>
+      <lines total="209" comments="44" code="165" executable="69" executed="40" percent="57.97"/>
       <methods count="7" tested="4" percent="57.14"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\Http\Controllers\DemandeLicenceController" start="14" executable="76" executed="13" crap="143.16">
+    <class name="App\Http\Controllers\DemandeLicenceController" start="15" executable="69" executed="40" crap="31.7">
       <namespace name="App\Http\Controllers"/>
-      <method name="__construct" signature="__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository)" start="20" end="23" crap="1" executable="1" executed="1" coverage="100"/>
-      <method name="index" signature="index()" start="25" end="35" crap="2" executable="4" executed="4" coverage="100"/>
-      <method name="create" signature="create()" start="41" end="46" crap="1" executable="2" executed="2" coverage="100"/>
-      <method name="renouveler" signature="renouveler(App\Models\LicenceChoisie $licenceChoisie)" start="48" end="89" crap="20" executable="20" executed="0" coverage="0"/>
-      <method name="ajouter" signature="ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)" start="91" end="117" crap="12" executable="15" executed="0" coverage="0"/>
-      <method name="store" signature="store(Illuminate\Http\Request $request)" start="122" end="192" crap="9.03" executable="32" executed="4" coverage="12.5"/>
-      <method name="destroy" signature="destroy(App\Models\DemandeLicence $demandeLicence)" start="220" end="224" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="__construct" signature="__construct(App\Http\Repositories\DemandeRenouvellementRepository $demandeRenouvellementRepository, App\Http\Repositories\DemandeAjoutRepository $demandeAjoutRepository)" start="21" end="25" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="index" signature="index()" start="27" end="37" crap="2" executable="4" executed="4" coverage="100"/>
+      <method name="create" signature="create()" start="43" end="48" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="renouveler" signature="renouveler(App\Models\LicenceChoisie $licenceChoisie)" start="50" end="91" crap="4.05" executable="20" executed="17" coverage="85"/>
+      <method name="ajouter" signature="ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)" start="93" end="119" crap="3.02" executable="15" executed="13" coverage="86.666666666667"/>
+      <method name="store" signature="store(Illuminate\Http\Request $request)" start="124" end="175" crap="12" executable="24" executed="0" coverage="0"/>
+      <method name="destroy" signature="destroy(App\Models\DemandeLicence $demandeLicence)" start="203" end="207" crap="1" executable="2" executed="2" coverage="100"/>
     </class>
     <coverage>
-      <line nr="22">
+      <line nr="23">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_employe"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view"/>
-        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
       </line>
-      <line nr="27">
+      <line nr="24">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_employe"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
       </line>
       <line nr="29">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_employe"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities"/>
       </line>
-      <line nr="30">
+      <line nr="31">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_employe"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin"/>
+        <covered by="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities"/>
+      </line>
+      <line nr="32">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_employe"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_index_for_admin"/>
       </line>
-      <line nr="33">
+      <line nr="35">
         <covered by="Tests\Feature\DemandeLicenceTest::test_dont_access_demande_licence_index_for_user_without_abilities"/>
-      </line>
-      <line nr="43">
-        <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view"/>
       </line>
       <line nr="45">
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view"/>
       </line>
-      <line nr="125">
-        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
+      <line nr="47">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_create_method_returns_correct_view"/>
       </line>
-      <line nr="130">
-        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
+      <line nr="52">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
       </line>
-      <line nr="152">
-        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
+      <line nr="53">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
       </line>
-      <line nr="155">
-        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_create_demande"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
+      <line nr="54">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
       </line>
-      <line nr="222">
+      <line nr="57">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="62">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="64">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="65">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="66">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="68">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="69">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="70">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="72">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="74">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="77">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="81">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="86">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="89">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+      <line nr="96">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="98">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="99">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="100">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="101">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="102">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="103">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="105">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="106">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="108">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="112">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="116">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="118">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
+      </line>
+      <line nr="205">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
       </line>
-      <line nr="223">
+      <line nr="206">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
-        <covered by="Tests\Feature\LicenceChoisieTest::test_user_can_accept_demande"/>
       </line>
     </coverage>
     <source>
@@ -100,47 +182,53 @@
       <line no="6">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">App\Models\DemandeLicence</token>
+        <token name="T_NAME_QUALIFIED">App\Http\Repositories\DemandeAjoutRepository</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="7">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">App\Models\Licence</token>
+        <token name="T_NAME_QUALIFIED">App\Models\DemandeLicence</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="8">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">App\Models\LicenceChoisie</token>
+        <token name="T_NAME_QUALIFIED">App\Models\Licence</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="9">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Carbon\Carbon</token>
+        <token name="T_NAME_QUALIFIED">App\Models\LicenceChoisie</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="10">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Illuminate\Http\Request</token>
+        <token name="T_NAME_QUALIFIED">Carbon\Carbon</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="11">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_NAME_QUALIFIED">Illuminate\Support\Facades\Auth</token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Http\Request</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="12">
         <token name="T_USE">use</token>
         <token name="T_WHITESPACE"> </token>
+        <token name="T_NAME_QUALIFIED">Illuminate\Support\Facades\Auth</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="13">
+        <token name="T_USE">use</token>
+        <token name="T_WHITESPACE"> </token>
         <token name="T_NAME_QUALIFIED">Illuminate\Support\Facades\Session</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="13"/>
-      <line no="14">
+      <line no="14"/>
+      <line no="15">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">DemandeLicenceController</token>
@@ -149,27 +237,30 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_STRING">Controller</token>
       </line>
-      <line no="15">
+      <line no="16">
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="16">
+      <line no="17">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="17">
+      <line no="18">
         <token name="T_DOC_COMMENT">     * Display a listing of the resource.</token>
       </line>
-      <line no="18">
+      <line no="19">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="19">
+      <line no="20">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PROTECTED">protected</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$demandeRenouvellementRepository</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$demandeAjoutRepository</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="20">
+      <line no="21">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -180,13 +271,18 @@
         <token name="T_STRING">DemandeRenouvellementRepository</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$demandeRenouvellementRepository</token>
+        <token name="T_COMMA">,</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_STRING">DemandeAjoutRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$demandeAjoutRepository</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="21">
+      <line no="22">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="22">
+      <line no="23">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -197,12 +293,23 @@
         <token name="T_VARIABLE">$demandeRenouvellementRepository</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="23">
+      <line no="24">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$this</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">demandeAjoutRepository</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$demandeAjoutRepository</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="25">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="24"/>
-      <line no="25">
+      <line no="26"/>
+      <line no="27">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -212,11 +319,11 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="26">
+      <line no="28">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="27">
+      <line no="29">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandes_licences</token>
         <token name="T_WHITESPACE"> </token>
@@ -229,8 +336,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="28"/>
-      <line no="29">
+      <line no="30"/>
+      <line no="31">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -249,7 +356,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="30">
+      <line no="32">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -265,12 +372,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31">
+      <line no="33">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="32"/>
-      <line no="33">
+      <line no="34"/>
+      <line no="35">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">abort</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -278,24 +385,24 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="34"/>
-      <line no="35">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_CLOSE_CURLY">}</token>
-      </line>
       <line no="36"/>
       <line no="37">
         <token name="T_WHITESPACE">    </token>
+        <token name="T_CLOSE_CURLY">}</token>
+      </line>
+      <line no="38"/>
+      <line no="39">
+        <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="38">
+      <line no="40">
         <token name="T_DOC_COMMENT">     * Show the form for creating a new resource.</token>
       </line>
-      <line no="39">
+      <line no="41">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="40"/>
-      <line no="41">
+      <line no="42"/>
+      <line no="43">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -305,11 +412,11 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="42">
+      <line no="44">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="43">
+      <line no="45">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandes_licences</token>
         <token name="T_WHITESPACE"> </token>
@@ -322,8 +429,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="44"/>
-      <line no="45">
+      <line no="46"/>
+      <line no="47">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -339,12 +446,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="46">
+      <line no="48">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="47"/>
-      <line no="48">
+      <line no="49"/>
+      <line no="50">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -357,11 +464,11 @@
         <token name="T_VARIABLE">$licenceChoisie</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="49">
+      <line no="51">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="50">
+      <line no="52">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeExistante</token>
         <token name="T_WHITESPACE"> </token>
@@ -379,7 +486,7 @@
         <token name="T_STRING">id</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="51">
+      <line no="53">
         <token name="T_WHITESPACE">            </token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">where</token>
@@ -394,7 +501,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="52">
+      <line no="54">
         <token name="T_WHITESPACE">            </token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">exists</token>
@@ -402,12 +509,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="53"/>
-      <line no="54">
+      <line no="55"/>
+      <line no="56">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// Si une demande de renouvellement existe d&#xE9;j&#xE0;, retourner un message d'erreur</token>
       </line>
-      <line no="55">
+      <line no="57">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -417,7 +524,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="56">
+      <line no="58">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -438,7 +545,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="57">
+      <line no="59">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
         <token name="T_WHITESPACE"> </token>
@@ -446,12 +553,12 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="58"/>
-      <line no="59">
+      <line no="60"/>
+      <line no="61">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Sinon cr&#xE9;er une nouvelle demande de renouvellement</token>
       </line>
-      <line no="60">
+      <line no="62">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_WHITESPACE"> </token>
@@ -464,28 +571,28 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="61"/>
-      <line no="62">
+      <line no="63"/>
+      <line no="64">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$typeDemande</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">"Renouvellement de licence"</token>
+        <token name="T_LNUMBER">0</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="63">
+      <line no="65">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">type_demande</token>
+        <token name="T_STRING">a_renouveler</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$typeDemande</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="64">
+      <line no="66">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -500,8 +607,8 @@
         <token name="T_STRING">duree</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="65"/>
-      <line no="66">
+      <line no="67"/>
+      <line no="68">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -514,7 +621,7 @@
         <token name="T_STRING">id</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="67">
+      <line no="69">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -527,7 +634,7 @@
         <token name="T_STRING">licence_id</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="68">
+      <line no="70">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -542,8 +649,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="69"/>
-      <line no="70">
+      <line no="71"/>
+      <line no="72">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -561,8 +668,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="71"/>
-      <line no="72">
+      <line no="73"/>
+      <line no="74">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$dateFin</token>
         <token name="T_WHITESPACE"> </token>
@@ -578,46 +685,46 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="73"/>
-      <line no="74">
+      <line no="75"/>
+      <line no="76">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// V&#xE9;rifier si une demande d'ajout est en cours et la supprimer si c'est le cas</token>
       </line>
-      <line no="75">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_IF">if</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">session</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">has</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_CURLY">{</token>
-      </line>
-      <line no="76">
-        <token name="T_WHITESPACE">                </token>
-        <token name="T_STRING">session</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">forget</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
       <line no="77">
         <token name="T_WHITESPACE">            </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">session</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">has</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="78">
+        <token name="T_WHITESPACE">                </token>
+        <token name="T_STRING">session</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">forget</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="79">
+        <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="78"/>
-      <line no="79">
+      <line no="80"/>
+      <line no="81">
         <token name="T_WHITESPACE">            </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -634,7 +741,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="80">
+      <line no="82">
         <token name="T_WHITESPACE">                </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -646,16 +753,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="81">
+      <line no="83">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="82"/>
-      <line no="83">
+      <line no="84"/>
+      <line no="85">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Stocker la demande de renouvellement en session</token>
       </line>
-      <line no="84">
+      <line no="86">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -670,12 +777,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="85"/>
-      <line no="86">
+      <line no="87"/>
+      <line no="88">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Rediriger l'utilisateur vers la page de cr&#xE9;ation de demande de licence</token>
       </line>
-      <line no="87">
+      <line no="89">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -689,16 +796,16 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="88">
+      <line no="90">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="89">
+      <line no="91">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="90"/>
-      <line no="91">
+      <line no="92"/>
+      <line no="93">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -716,12 +823,12 @@
         <token name="T_VARIABLE">$request</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="92">
+      <line no="94">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="93"/>
-      <line no="94">
+      <line no="95"/>
+      <line no="96">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_WHITESPACE"> </token>
@@ -734,44 +841,44 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="95"/>
-      <line no="96">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$typeDemande</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">"Ajout de licence"</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="97">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$demandeAjout</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">type_demande</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$typeDemande</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
+      <line no="97"/>
       <line no="98">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$demandeAjout</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">libelle</token>
+        <token name="T_VARIABLE">$typeDemande</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$licence</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">libelle</token>
+        <token name="T_LNUMBER">1</token>
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="99">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">a_renouveler</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$typeDemande</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="100">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$demandeAjout</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">libelle</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$licence</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">libelle</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="101">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$demandeAjout</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">duree</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
@@ -781,7 +888,7 @@
         <token name="T_STRING">duree</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="100">
+      <line no="102">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -794,7 +901,7 @@
         <token name="T_STRING">prix</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="101">
+      <line no="103">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -809,8 +916,8 @@
         <token name="T_STRING">libelle</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="102"/>
-      <line no="103">
+      <line no="104"/>
+      <line no="105">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -823,7 +930,7 @@
         <token name="T_STRING">id</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="104">
+      <line no="106">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -838,42 +945,42 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="105"/>
-      <line no="106">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_IF">if</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_STRING">session</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">has</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_OPEN_CURLY">{</token>
-      </line>
-      <line no="107">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_STRING">session</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">forget</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
+      <line no="107"/>
       <line no="108">
         <token name="T_WHITESPACE">        </token>
+        <token name="T_IF">if</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_STRING">session</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">has</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_OPEN_CURLY">{</token>
+      </line>
+      <line no="109">
+        <token name="T_WHITESPACE">            </token>
+        <token name="T_STRING">session</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">forget</token>
+        <token name="T_OPEN_BRACKET">(</token>
+        <token name="T_CONSTANT_ENCAPSED_STRING">'demandeRenouvellement'</token>
+        <token name="T_CLOSE_BRACKET">)</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
+      <line no="110">
+        <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="109"/>
-      <line no="110">
+      <line no="111"/>
+      <line no="112">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -890,7 +997,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="111">
+      <line no="113">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -902,12 +1009,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="112">
+      <line no="114">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="113"/>
-      <line no="114">
+      <line no="115"/>
+      <line no="116">
         <token name="T_WHITESPACE">        </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -922,8 +1029,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="115"/>
-      <line no="116">
+      <line no="117"/>
+      <line no="118">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -937,22 +1044,22 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="117">
+      <line no="119">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="118"/>
-      <line no="119">
+      <line no="120"/>
+      <line no="121">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="120">
+      <line no="122">
         <token name="T_DOC_COMMENT">     * Store a newly created resource in storage.</token>
       </line>
-      <line no="121">
+      <line no="123">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="122">
+      <line no="124">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -965,12 +1072,12 @@
         <token name="T_VARIABLE">$request</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="123">
+      <line no="125">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="124"/>
-      <line no="125">
+      <line no="126"/>
+      <line no="127">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeRenouvellement</token>
         <token name="T_WHITESPACE"> </token>
@@ -982,14 +1089,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="126"/>
-      <line no="127"/>
-      <line no="128">
+      <line no="128"/>
+      <line no="129"/>
+      <line no="130">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// Enregistrement d'une demande de renouvellement de licence</token>
       </line>
-      <line no="129"/>
-      <line no="130">
+      <line no="131"/>
+      <line no="132">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -999,7 +1106,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="131">
+      <line no="133">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$request</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1007,7 +1114,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="132">
+      <line no="134">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1028,14 +1135,14 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' days'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="133">
+      <line no="135">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="134">
+      <line no="136">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.after_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1044,7 +1151,7 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'La date de d&#xE9;but doit &#xEA;tre &#xE9;gale ou sup&#xE9;rieure &#xE0; la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="135">
+      <line no="137">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.before_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1065,14 +1172,14 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' jours &#xE0; partir de la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="136">
+      <line no="138">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="137"/>
-      <line no="138">
+      <line no="139"/>
+      <line no="140">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1087,8 +1194,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="139"/>
-      <line no="140">
+      <line no="141"/>
+      <line no="142">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">Session</token>
         <token name="T_DOUBLE_COLON">::</token>
@@ -1098,12 +1205,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="141"/>
-      <line no="142">
+      <line no="143"/>
+      <line no="144">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Supprimer la demande de renouvellement de la session apr&#xE8;s l'enregistrement</token>
       </line>
-      <line no="143">
+      <line no="145">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1115,13 +1222,13 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="144"/>
-      <line no="145"/>
-      <line no="146">
+      <line no="146"/>
+      <line no="147"/>
+      <line no="148">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Rediriger l'utilisateur vers la page du formulaire de renouvellement</token>
       </line>
-      <line no="147">
+      <line no="149">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1135,17 +1242,17 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="148">
+      <line no="150">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="149"/>
-      <line no="150">
+      <line no="151"/>
+      <line no="152">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// Enregistrement d'une demande d'ajout de licence</token>
       </line>
-      <line no="151"/>
-      <line no="152">
+      <line no="153"/>
+      <line no="154">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_WHITESPACE"> </token>
@@ -1157,9 +1264,9 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="153"/>
-      <line no="154"/>
-      <line no="155">
+      <line no="155"/>
+      <line no="156"/>
+      <line no="157">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -1169,7 +1276,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="156">
+      <line no="158">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$request</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1177,7 +1284,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="157">
+      <line no="159">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1198,14 +1305,14 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' days'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="158">
+      <line no="160">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="159">
+      <line no="161">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.after_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1214,7 +1321,7 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'La date de d&#xE9;but doit &#xEA;tre &#xE9;gale ou sup&#xE9;rieure &#xE0; la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="160">
+      <line no="162">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.before_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1235,164 +1342,30 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' jours &#xE0; partir de la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="161">
+      <line no="163">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="162"/>
-      <line no="163">
+      <line no="164"/>
+      <line no="165">
         <token name="T_WHITESPACE">            </token>
-        <token name="T_COMMENT">// Cr&#xE9;er un nouvel objet DemandeLicence</token>
-      </line>
-      <line no="164">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_NEW">new</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">DemandeLicence</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="165"/>
-      <line no="166">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_COMMENT">// Assigner les valeurs de la demande d'ajout &#xE0; l'objet DemandeLicence</token>
-      </line>
-      <line no="167">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
+        <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">type_demande</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeAjout</token>
+        <token name="T_STRING">demandeAjoutRepository</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">type_demande</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="168"/>
-      <line no="169">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">date_debut_licence</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">Carbon</token>
-        <token name="T_DOUBLE_COLON">::</token>
-        <token name="T_STRING">parse</token>
+        <token name="T_STRING">store</token>
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_VARIABLE">$request</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">input</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence'</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="170">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$dateDebutLicence</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">date_debut_licence</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="171"/>
-      <line no="172">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_COMMENT">// Calculer la date de fin en ajoutant la dur&#xE9;e de la licence &#xE0; la date de d&#xE9;but</token>
-      </line>
-      <line no="173">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$dateFinLicence</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$dateDebutLicence</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">copy</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">addDays</token>
-        <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_VARIABLE">$demandeAjout</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licence</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">duree</token>
-        <token name="T_CLOSE_BRACKET">)</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="174"/>
-      <line no="175">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">date_fin_licence</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$dateFinLicence</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="176"/>
-      <line no="177"/>
-      <line no="178">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licence_id</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
+        <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_VARIABLE">$demandeAjout</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licence_id</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="179">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">user_id</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeAjout</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">user_id</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="180"/>
-      <line no="181">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_COMMENT">// Enregistrer la nouvelle demande dans la base de donn&#xE9;es</token>
-      </line>
-      <line no="182">
-        <token name="T_WHITESPACE">            </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">save</token>
-        <token name="T_OPEN_BRACKET">(</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="183"/>
-      <line no="184">
+      <line no="166"/>
+      <line no="167">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">Session</token>
         <token name="T_DOUBLE_COLON">::</token>
@@ -1402,12 +1375,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="185"/>
-      <line no="186">
+      <line no="168"/>
+      <line no="169">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Supprimer la demande d'ajout de la session apr&#xE8;s l'enregistrement</token>
       </line>
-      <line no="187">
+      <line no="170">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1419,12 +1392,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="188"/>
-      <line no="189">
+      <line no="171"/>
+      <line no="172">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Rediriger l'utilisateur vers la page du formulaire de renouvellement</token>
       </line>
-      <line no="190">
+      <line no="173">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1438,110 +1411,110 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="191">
+      <line no="174">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="192">
+      <line no="175">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="193">
+      <line no="176">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="194">
+      <line no="177">
         <token name="T_DOC_COMMENT">     * Display the specified resource.</token>
       </line>
-      <line no="195">
+      <line no="178">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="196">
+      <line no="179">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// public function show(DemandeLicence $demandeLicence)</token>
       </line>
-      <line no="197">
+      <line no="180">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// {</token>
       </line>
-      <line no="198">
+      <line no="181">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//     //</token>
       </line>
-      <line no="199">
+      <line no="182">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// }</token>
       </line>
-      <line no="200"/>
-      <line no="201">
+      <line no="183"/>
+      <line no="184">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// /**</token>
       </line>
-      <line no="202">
+      <line no="185">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//  * Show the form for editing the specified resource.</token>
       </line>
-      <line no="203">
+      <line no="186">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//  */</token>
       </line>
-      <line no="204">
+      <line no="187">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// public function edit(DemandeLicence $demandeLicence)</token>
       </line>
-      <line no="205">
+      <line no="188">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// {</token>
       </line>
-      <line no="206">
+      <line no="189">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//     //</token>
       </line>
-      <line no="207">
+      <line no="190">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// }</token>
       </line>
-      <line no="208"/>
-      <line no="209">
+      <line no="191"/>
+      <line no="192">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// /**</token>
       </line>
-      <line no="210">
+      <line no="193">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//  * Update the specified resource in storage.</token>
       </line>
-      <line no="211">
+      <line no="194">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//  */</token>
       </line>
-      <line no="212">
+      <line no="195">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// public function update(Request $request, DemandeLicence $demandeLicence)</token>
       </line>
-      <line no="213">
+      <line no="196">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// {</token>
       </line>
-      <line no="214">
+      <line no="197">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">//     //</token>
       </line>
-      <line no="215">
+      <line no="198">
         <token name="T_WHITESPACE">    </token>
         <token name="T_COMMENT">// }</token>
       </line>
-      <line no="216"/>
-      <line no="217">
+      <line no="199"/>
+      <line no="200">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
-      <line no="218">
+      <line no="201">
         <token name="T_DOC_COMMENT">     * Remove the specified resource from storage.</token>
       </line>
-      <line no="219">
+      <line no="202">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
-      <line no="220">
+      <line no="203">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1554,11 +1527,11 @@
         <token name="T_VARIABLE">$demandeLicence</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="221">
+      <line no="204">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="222">
+      <line no="205">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeLicence</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1567,7 +1540,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="223">
+      <line no="206">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1581,14 +1554,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="224">
+      <line no="207">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="225">
+      <line no="208">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="226"/>
+      <line no="209"/>
     </source>
   </file>
 </phpunit>

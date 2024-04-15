@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <file name="DemandeRenouvellementRepository.php" path="\Http\Repositories">
+  <file name="DemandeAjoutRepository.php" path="\Http\Repositories">
     <totals>
-      <lines total="38" comments="4" code="34" executable="10" executed="0" percent="0.00"/>
+      <lines total="36" comments="4" code="32" executable="9" executed="0" percent="0.00"/>
       <methods count="1" tested="0" percent="0.00"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\Http\Repositories\DemandeRenouvellementRepository" start="8" executable="10" executed="0" crap="2">
+    <class name="App\Http\Repositories\DemandeAjoutRepository" start="8" executable="9" executed="0" crap="2">
       <namespace name="App\Http\Repositories"/>
-      <method name="store" signature="store($request, $demandeRenouvellement)" start="12" end="36" crap="2" executable="10" executed="0" coverage="0"/>
+      <method name="store" signature="store($request, $demandeAjout)" start="12" end="34" crap="2" executable="9" executed="0" coverage="0"/>
     </class>
     <source>
       <line no="1">
@@ -40,7 +40,7 @@
       <line no="8">
         <token name="T_CLASS">class</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_STRING">DemandeRenouvellementRepository</token>
+        <token name="T_STRING">DemandeAjoutRepository</token>
       </line>
       <line no="9">
         <token name="T_OPEN_CURLY">{</token>
@@ -64,7 +64,7 @@
         <token name="T_VARIABLE">$request</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
+        <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
       <line no="13">
@@ -92,10 +92,9 @@
       <line no="17"/>
       <line no="18">
         <token name="T_WHITESPACE">        </token>
-        <token name="T_COMMENT">// Assigner les valeurs de la demande de renouvellement &#xE0; l'objet DemandeLicence</token>
+        <token name="T_COMMENT">// Assigner les valeurs de la demande d'ajout &#xE0; l'objet DemandeLicence</token>
       </line>
-      <line no="19"/>
-      <line no="20">
+      <line no="19">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$nouvelleDemande</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -103,13 +102,13 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
+        <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">a_renouveler</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="21"/>
-      <line no="22">
+      <line no="20"/>
+      <line no="21">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$nouvelleDemande</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -130,7 +129,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="23">
+      <line no="22">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$dateDebutLicence</token>
         <token name="T_WHITESPACE"> </token>
@@ -141,12 +140,12 @@
         <token name="T_STRING">date_debut_licence</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="24"/>
-      <line no="25">
+      <line no="23"/>
+      <line no="24">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// Calculer la date de fin en ajoutant la dur&#xE9;e de la licence &#xE0; la date de d&#xE9;but</token>
       </line>
-      <line no="26">
+      <line no="25">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$dateFinLicence</token>
         <token name="T_WHITESPACE"> </token>
@@ -160,7 +159,7 @@
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">addDays</token>
         <token name="T_OPEN_BRACKET">(</token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
+        <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
         <token name="T_STRING">licence</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -168,8 +167,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="27"/>
-      <line no="28">
+      <line no="26"/>
+      <line no="27">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$nouvelleDemande</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -180,52 +179,39 @@
         <token name="T_VARIABLE">$dateFinLicence</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="29"/>
+      <line no="28"/>
+      <line no="29">
+        <token name="T_WHITESPACE">        </token>
+        <token name="T_VARIABLE">$nouvelleDemande</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">licence_id</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_EQUAL">=</token>
+        <token name="T_WHITESPACE"> </token>
+        <token name="T_VARIABLE">$demandeAjout</token>
+        <token name="T_OBJECT_OPERATOR">-&gt;</token>
+        <token name="T_STRING">licence_id</token>
+        <token name="T_SEMICOLON">;</token>
+      </line>
       <line no="30">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$nouvelleDemande</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licencechoisie_id</token>
+        <token name="T_STRING">user_id</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_EQUAL">=</token>
         <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
+        <token name="T_VARIABLE">$demandeAjout</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licencechoisie_id</token>
+        <token name="T_STRING">user_id</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="31">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licence_id</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">licence_id</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
+      <line no="31"/>
       <line no="32">
-        <token name="T_WHITESPACE">        </token>
-        <token name="T_VARIABLE">$nouvelleDemande</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">user_id</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_EQUAL">=</token>
-        <token name="T_WHITESPACE"> </token>
-        <token name="T_VARIABLE">$demandeRenouvellement</token>
-        <token name="T_OBJECT_OPERATOR">-&gt;</token>
-        <token name="T_STRING">user_id</token>
-        <token name="T_SEMICOLON">;</token>
-      </line>
-      <line no="33"/>
-      <line no="34">
         <token name="T_WHITESPACE">        </token>
         <token name="T_COMMENT">// Enregistrer la nouvelle demande dans la base de donn&#xE9;es</token>
       </line>
-      <line no="35">
+      <line no="33">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$nouvelleDemande</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -234,14 +220,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="36">
+      <line no="34">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="37">
+      <line no="35">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="38"/>
+      <line no="36"/>
     </source>
   </file>
 </phpunit>

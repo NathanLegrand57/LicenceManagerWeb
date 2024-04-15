@@ -17,7 +17,7 @@ class DemandeRenouvellementRepository
 
         // Assigner les valeurs de la demande de renouvellement à l'objet DemandeLicence
 
-        $nouvelleDemande->type_demande = $demandeRenouvellement->type_demande;
+        $nouvelleDemande->a_renouveler = $demandeRenouvellement->a_renouveler;
 
         $nouvelleDemande->date_debut_licence = Carbon::parse($request->input('date_debut_licence'));
         $dateDebutLicence = $nouvelleDemande->date_debut_licence;

@@ -2,18 +2,23 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="LicenceChoisie.php" path="\Models">
     <totals>
-      <lines total="31" comments="0" code="31" executable="3" executed="0" percent="0.00"/>
-      <methods count="3" tested="0" percent="0.00"/>
+      <lines total="31" comments="0" code="31" executable="3" executed="1" percent="33.33"/>
+      <methods count="3" tested="1" percent="33.33"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
       <traits count="0" tested="0" percent="0"/>
     </totals>
-    <class name="App\Models\LicenceChoisie" start="10" executable="3" executed="0" crap="12">
+    <class name="App\Models\LicenceChoisie" start="10" executable="3" executed="1" crap="5.67">
       <namespace name="App\Models"/>
-      <method name="licence" signature="licence()" start="16" end="19" crap="2" executable="1" executed="0" coverage="0"/>
+      <method name="licence" signature="licence()" start="16" end="19" crap="1" executable="1" executed="1" coverage="100"/>
       <method name="user" signature="user()" start="21" end="24" crap="2" executable="1" executed="0" coverage="0"/>
       <method name="demandes_licences" signature="demandes_licences()" start="26" end="29" crap="2" executable="1" executed="0" coverage="0"/>
     </class>
+    <coverage>
+      <line nr="18">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_create_demande_renouvellement_licence"/>
+      </line>
+    </coverage>
     <source>
       <line no="1">
         <token name="T_OPEN_TAG">&lt;?php</token>

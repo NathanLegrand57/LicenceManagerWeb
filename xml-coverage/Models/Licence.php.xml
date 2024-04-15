@@ -16,6 +16,7 @@
     </class>
     <coverage>
       <line nr="15">
+        <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
         <covered by="Tests\Feature\LicenceAPITest::test_licence_API_index_method_returns_correct_view"/>
         <covered by="Tests\Feature\LicenceTest::test_licence_index_method_returns_correct_view"/>
         <covered by="Tests\Feature\LicenceTest::test_licence_show_for_user"/>

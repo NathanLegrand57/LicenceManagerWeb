@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('demande_licences', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('type_demande', 75);
+            $table->boolean('a_renouveler');
             $table->date('date_debut_licence');
             $table->date('date_fin_licence');
             $table->foreignIdFor(LicenceChoisie::class, 'licencechoisie_id')->nullable();

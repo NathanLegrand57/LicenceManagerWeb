@@ -21,7 +21,7 @@ class DemandeLicenceFactory extends Factory
     public function definition(): array
     {
         return [
-            'type_demande' => $this->faker->name(1),
+            'a_renouveler' => $this->faker->boolean(),
             'date_debut_licence' => Carbon::parse('14-05-2024'),
             'date_fin_licence' => Carbon::parse('14-06-2024'),
             'licencechoisie_id' => LicenceChoisie::factory()->create(),

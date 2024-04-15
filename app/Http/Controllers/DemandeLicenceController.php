@@ -61,8 +61,8 @@ class DemandeLicenceController extends Controller
             // Sinon créer une nouvelle demande de renouvellement
             $demandeRenouvellement = new DemandeLicence();
 
-            $typeDemande = "Renouvellement de licence";
-            $demandeRenouvellement->type_demande = $typeDemande;
+            $typeDemande = 0;
+            $demandeRenouvellement->a_renouveler = $typeDemande;
             $demandeRenouvellement->duree = $licenceChoisie->licence->duree;
 
             $demandeRenouvellement->licencechoisie_id = $licenceChoisie->id;
@@ -95,8 +95,8 @@ class DemandeLicenceController extends Controller
 
         $demandeAjout = new DemandeLicence();
 
-        $typeDemande = "Ajout de licence";
-        $demandeAjout->type_demande = $typeDemande;
+        $typeDemande = 1;
+        $demandeAjout->a_renouveler = $typeDemande;
         $demandeAjout->libelle = $licence->libelle;
         $demandeAjout->duree = $licence->duree;
         $demandeAjout->prix = $licence->prix;
@@ -153,7 +153,6 @@ class DemandeLicenceController extends Controller
 
         $demandeAjout = session('demandeAjout');
 
-
         if ($demandeAjout) {
             $request->validate([
                 'date_debut_licence' => 'required|date|after_or_equal:today|before_or_equal:+' . $demandeAjout->licence->duree . ' days',
@@ -173,29 +172,6 @@ class DemandeLicenceController extends Controller
             return redirect()->route('demande-licence.create');
         }
     }
-    /**
-     * Display the specified resource.
-     */
-    // public function show(DemandeLicence $demandeLicence)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Show the form for editing the specified resource.
-    //  */
-    // public function edit(DemandeLicence $demandeLicence)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Update the specified resource in storage.
-    //  */
-    // public function update(Request $request, DemandeLicence $demandeLicence)
-    // {
-    //     //
-    // }
 
     /**
      * Remove the specified resource from storage.
