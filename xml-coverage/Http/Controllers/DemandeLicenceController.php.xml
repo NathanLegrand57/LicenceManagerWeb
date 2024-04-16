@@ -2,7 +2,7 @@
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
   <file name="DemandeLicenceController.php" path="\Http\Controllers">
     <totals>
-      <lines total="209" comments="44" code="165" executable="69" executed="40" percent="57.97"/>
+      <lines total="185" comments="23" code="162" executable="69" executed="40" percent="57.97"/>
       <methods count="7" tested="4" percent="57.14"/>
       <functions count="0" tested="0" percent="0"/>
       <classes count="1" tested="0" percent="0.00"/>
@@ -15,8 +15,8 @@
       <method name="create" signature="create()" start="43" end="48" crap="1" executable="2" executed="2" coverage="100"/>
       <method name="renouveler" signature="renouveler(App\Models\LicenceChoisie $licenceChoisie)" start="50" end="91" crap="4.05" executable="20" executed="17" coverage="85"/>
       <method name="ajouter" signature="ajouter(App\Models\Licence $licence, Illuminate\Http\Request $request)" start="93" end="119" crap="3.02" executable="15" executed="13" coverage="86.666666666667"/>
-      <method name="store" signature="store(Illuminate\Http\Request $request)" start="124" end="175" crap="12" executable="24" executed="0" coverage="0"/>
-      <method name="destroy" signature="destroy(App\Models\DemandeLicence $demandeLicence)" start="203" end="207" crap="1" executable="2" executed="2" coverage="100"/>
+      <method name="store" signature="store(Illuminate\Http\Request $request)" start="124" end="174" crap="12" executable="24" executed="0" coverage="0"/>
+      <method name="destroy" signature="destroy(App\Models\DemandeLicence $demandeLicence)" start="179" end="183" crap="1" executable="2" executed="2" coverage="100"/>
     </class>
     <coverage>
       <line nr="23">
@@ -152,11 +152,11 @@
       <line nr="118">
         <covered by="Tests\Feature\DemandeLicenceTest::test_user_can_see_form_demande_ajout_licence"/>
       </line>
-      <line nr="205">
+      <line nr="181">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
       </line>
-      <line nr="206">
+      <line nr="182">
         <covered by="Tests\Feature\DemandeLicenceTest::test_access_demande_licence_cant_be_destroyed_for_user_without_abilities"/>
         <covered by="Tests\Feature\DemandeLicenceTest::test_demande_licence_can_be_destroyed"/>
       </line>
@@ -1265,8 +1265,7 @@
         <token name="T_SEMICOLON">;</token>
       </line>
       <line no="155"/>
-      <line no="156"/>
-      <line no="157">
+      <line no="156">
         <token name="T_WHITESPACE">        </token>
         <token name="T_IF">if</token>
         <token name="T_WHITESPACE"> </token>
@@ -1276,7 +1275,7 @@
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="158">
+      <line no="157">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$request</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1284,7 +1283,7 @@
         <token name="T_OPEN_BRACKET">(</token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="159">
+      <line no="158">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1305,14 +1304,14 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' days'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="160">
+      <line no="159">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_COMMA">,</token>
         <token name="T_WHITESPACE"> </token>
         <token name="T_OPEN_SQUARE">[</token>
       </line>
-      <line no="161">
+      <line no="160">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.after_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1321,7 +1320,7 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">'La date de d&#xE9;but doit &#xEA;tre &#xE9;gale ou sup&#xE9;rieure &#xE0; la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="162">
+      <line no="161">
         <token name="T_WHITESPACE">                </token>
         <token name="T_CONSTANT_ENCAPSED_STRING">'date_debut_licence.before_or_equal'</token>
         <token name="T_WHITESPACE"> </token>
@@ -1342,14 +1341,14 @@
         <token name="T_CONSTANT_ENCAPSED_STRING">' jours &#xE0; partir de la date actuelle.'</token>
         <token name="T_COMMA">,</token>
       </line>
-      <line no="163">
+      <line no="162">
         <token name="T_WHITESPACE">            </token>
         <token name="T_CLOSE_SQUARE">]</token>
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="164"/>
-      <line no="165">
+      <line no="163"/>
+      <line no="164">
         <token name="T_WHITESPACE">            </token>
         <token name="T_VARIABLE">$this</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1364,8 +1363,8 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="166"/>
-      <line no="167">
+      <line no="165"/>
+      <line no="166">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">Session</token>
         <token name="T_DOUBLE_COLON">::</token>
@@ -1375,12 +1374,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="168"/>
-      <line no="169">
+      <line no="167"/>
+      <line no="168">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Supprimer la demande d'ajout de la session apr&#xE8;s l'enregistrement</token>
       </line>
-      <line no="170">
+      <line no="169">
         <token name="T_WHITESPACE">            </token>
         <token name="T_STRING">session</token>
         <token name="T_OPEN_BRACKET">(</token>
@@ -1392,12 +1391,12 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="171"/>
-      <line no="172">
+      <line no="170"/>
+      <line no="171">
         <token name="T_WHITESPACE">            </token>
         <token name="T_COMMENT">// Rediriger l'utilisateur vers la page du formulaire de renouvellement</token>
       </line>
-      <line no="173">
+      <line no="172">
         <token name="T_WHITESPACE">            </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1411,110 +1410,26 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="174">
+      <line no="173">
         <token name="T_WHITESPACE">        </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="175">
+      <line no="174">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
+      <line no="175"/>
       <line no="176">
         <token name="T_WHITESPACE">    </token>
         <token name="T_DOC_COMMENT">/**</token>
       </line>
       <line no="177">
-        <token name="T_DOC_COMMENT">     * Display the specified resource.</token>
+        <token name="T_DOC_COMMENT">     * Remove the specified resource from storage.</token>
       </line>
       <line no="178">
         <token name="T_DOC_COMMENT">     */</token>
       </line>
       <line no="179">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// public function show(DemandeLicence $demandeLicence)</token>
-      </line>
-      <line no="180">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// {</token>
-      </line>
-      <line no="181">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//     //</token>
-      </line>
-      <line no="182">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// }</token>
-      </line>
-      <line no="183"/>
-      <line no="184">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// /**</token>
-      </line>
-      <line no="185">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//  * Show the form for editing the specified resource.</token>
-      </line>
-      <line no="186">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//  */</token>
-      </line>
-      <line no="187">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// public function edit(DemandeLicence $demandeLicence)</token>
-      </line>
-      <line no="188">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// {</token>
-      </line>
-      <line no="189">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//     //</token>
-      </line>
-      <line no="190">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// }</token>
-      </line>
-      <line no="191"/>
-      <line no="192">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// /**</token>
-      </line>
-      <line no="193">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//  * Update the specified resource in storage.</token>
-      </line>
-      <line no="194">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//  */</token>
-      </line>
-      <line no="195">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// public function update(Request $request, DemandeLicence $demandeLicence)</token>
-      </line>
-      <line no="196">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// {</token>
-      </line>
-      <line no="197">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">//     //</token>
-      </line>
-      <line no="198">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_COMMENT">// }</token>
-      </line>
-      <line no="199"/>
-      <line no="200">
-        <token name="T_WHITESPACE">    </token>
-        <token name="T_DOC_COMMENT">/**</token>
-      </line>
-      <line no="201">
-        <token name="T_DOC_COMMENT">     * Remove the specified resource from storage.</token>
-      </line>
-      <line no="202">
-        <token name="T_DOC_COMMENT">     */</token>
-      </line>
-      <line no="203">
         <token name="T_WHITESPACE">    </token>
         <token name="T_PUBLIC">public</token>
         <token name="T_WHITESPACE"> </token>
@@ -1527,11 +1442,11 @@
         <token name="T_VARIABLE">$demandeLicence</token>
         <token name="T_CLOSE_BRACKET">)</token>
       </line>
-      <line no="204">
+      <line no="180">
         <token name="T_WHITESPACE">    </token>
         <token name="T_OPEN_CURLY">{</token>
       </line>
-      <line no="205">
+      <line no="181">
         <token name="T_WHITESPACE">        </token>
         <token name="T_VARIABLE">$demandeLicence</token>
         <token name="T_OBJECT_OPERATOR">-&gt;</token>
@@ -1540,7 +1455,7 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="206">
+      <line no="182">
         <token name="T_WHITESPACE">        </token>
         <token name="T_RETURN">return</token>
         <token name="T_WHITESPACE"> </token>
@@ -1554,14 +1469,14 @@
         <token name="T_CLOSE_BRACKET">)</token>
         <token name="T_SEMICOLON">;</token>
       </line>
-      <line no="207">
+      <line no="183">
         <token name="T_WHITESPACE">    </token>
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="208">
+      <line no="184">
         <token name="T_CLOSE_CURLY">}</token>
       </line>
-      <line no="209"/>
+      <line no="185"/>
     </source>
   </file>
 </phpunit>

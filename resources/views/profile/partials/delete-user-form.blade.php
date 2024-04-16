@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Une fois votre compte supprimé, toutes les données associées à ce compte disparaitront.') }}
+            {{ __('Une fois votre compte supprimé, toutes les données associées à ce compte disparaîtront.') }}
         </p>
     </header>
 

@@ -53,7 +53,7 @@
             </div>
         @empty
             <div class="md:col-span-2 text-center">
-                <p class="text-center">
+                <p class="text-center text-sm min-[475px]:text-base sm:text-lg">
                     Aucune demande connue
                 </p>
             </div>

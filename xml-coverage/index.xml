@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
-  <build time="Mon Apr 15 17:19:19 UTC 2024" phpunit="10.5.15" coverage="10.1.14">
+  <build time="Tue Apr 16 7:07:48 UTC 2024" phpunit="10.5.15" coverage="10.1.14">
     <runtime name="PHP" version="8.1.13" url="https://www.php.net/"/>
     <driver name="xdebug" version="3.3.1"/>
   </build>
@@ -50,7 +50,7 @@
     </tests>
     <directory name="/">
       <totals>
-        <lines total="1843" comments="417" code="1426" executable="327" executed="223" percent="68.20"/>
+        <lines total="1819" comments="396" code="1423" executable="327" executed="223" percent="68.20"/>
         <methods count="74" tested="48" percent="64.86"/>
         <functions count="0" tested="0" percent="0"/>
         <classes count="37" tested="19" percent="51.35"/>
@@ -94,7 +94,7 @@
       </directory>
       <directory name="Http">
         <totals>
-          <lines total="1431" comments="336" code="1095" executable="290" executed="198" percent="68.28"/>
+          <lines total="1407" comments="315" code="1092" executable="290" executed="198" percent="68.28"/>
           <methods count="49" tested="34" percent="69.39"/>
           <functions count="0" tested="0" percent="0"/>
           <classes count="23" tested="12" percent="52.17"/>
@@ -102,7 +102,7 @@
         </totals>
         <directory name="Controllers">
           <totals>
-            <lines total="929" comments="225" code="704" executable="222" executed="162" percent="72.97"/>
+            <lines total="905" comments="204" code="701" executable="222" executed="162" percent="72.97"/>
             <methods count="35" tested="26" percent="74.29"/>
             <functions count="0" tested="0" percent="0"/>
             <classes count="14" tested="9" percent="64.29"/>
@@ -227,7 +227,7 @@
           </file>
           <file name="DemandeLicenceController.php" href="Http/Controllers/DemandeLicenceController.php.xml">
             <totals>
-              <lines total="209" comments="44" code="165" executable="69" executed="40" percent="57.97"/>
+              <lines total="185" comments="23" code="162" executable="69" executed="40" percent="57.97"/>
               <methods count="7" tested="4" percent="57.14"/>
               <functions count="0" tested="0" percent="0"/>
               <classes count="1" tested="0" percent="0.00"/>
