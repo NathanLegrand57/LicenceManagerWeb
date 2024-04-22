@@ -59,7 +59,7 @@
                 @endcan
             </div>
         @empty
-            <p class="ms-3 text-sm min-[475px]:text-base sm:text-lg">
+            <p class="ms-3 text-sm min-[475px]:text-base sm:text-lg text-center">
                 Aucune licence connue
             </p>
         @endforelse
